@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
+import DemoVideoSection from "@/components/DemoVideoSection";
 import { motion } from "framer-motion";
 import { Bitcoin } from "lucide-react";
 
@@ -39,6 +40,7 @@ export default function Home() {
       <Hero />
       <BitcoinTicker />
       <Features />
+      <DemoVideoSection />
       <Testimonials />
     </>
   );

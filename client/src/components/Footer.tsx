@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Bitcoin className="h-8 w-8 text-bitcoin" />
@@ -117,7 +117,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        {/* Newsletter Signup */}
+        <div className="mb-8">
+          <NewsletterSignup />
+        </div>
+
+        <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>&copy; 2024 PaidIn. All rights reserved. Built for the Bitcoin economy.</p>
         </div>
       </div>

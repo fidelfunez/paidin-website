@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Bitcoin } from "lucide-react";
 import BtcPriceTicker from "./BtcPriceTicker";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -54,6 +55,7 @@ export default function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
+            <LanguageSwitcher />
             <Button variant="ghost" className="text-bitcoin hover:text-bitcoin-dark">
               Login
             </Button>

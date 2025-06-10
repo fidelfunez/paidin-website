@@ -12,6 +12,7 @@ import Features from "@/pages/Features";
 import Pricing from "@/pages/Pricing";
 import Security from "@/pages/Security";
 import Contact from "@/pages/Contact";
+import Careers from "@/pages/Careers";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/pricing" component={Pricing} />
         <Route path="/security" component={Security} />
         <Route path="/contact" component={Contact} />
+        <Route path="/careers" component={Careers} />
         <Route component={NotFound} />
       </Switch>
       <Footer />

@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Bitcoin } from "lucide-react";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import NewsletterSignup from "./NewsletterSignup";
 
 export default function Footer() {
   return (
@@ -72,12 +73,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors duration-200">
+                <Link href="/careers" className="hover:text-white transition-colors duration-200">
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors duration-200">
+                <a href="https://medium.com/@paidin" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">
                   Blog
                 </a>
               </li>

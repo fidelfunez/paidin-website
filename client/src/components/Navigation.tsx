@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Bitcoin } from "lucide-react";
+import BtcPriceTicker from "./BtcPriceTicker";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -47,6 +48,9 @@ export default function Navigation() {
                 {item.label}
               </Link>
             ))}
+            <div className="border-l border-gray-200 pl-6">
+              <BtcPriceTicker />
+            </div>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">

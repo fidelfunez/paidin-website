@@ -38,7 +38,7 @@ export default function About() {
             </AnimatedSection>
             <AnimatedSection animation="slideInRight">
               <h1 className="text-4xl font-bold text-gray-900 mb-6">
-                Why we built <span className="gradient-text">PaidIn</span>
+                Why we built <span className="text-bitcoin">PaidIn</span>
               </h1>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Traditional payroll systems weren't built for the Bitcoin economy. We created PaidIn to bridge the gap between conventional business operations and the future of money.

@@ -9,7 +9,7 @@ export default function Hero() {
           <div>
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
               The Future of{" "}
-              <span className="gradient-text">Bitcoin Payroll</span>
+              <span className="text-bitcoin">Bitcoin Payroll</span>
             </h1>
             
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">

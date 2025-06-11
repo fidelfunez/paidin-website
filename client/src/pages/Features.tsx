@@ -108,7 +108,7 @@ export default function Features() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Powerful <span className="gradient-text">Bitcoin payroll</span> features
+              Powerful <span className="text-bitcoin">Bitcoin payroll</span> features
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               Everything you need to transition your team to Bitcoin compensation, from basic payroll to advanced compliance and reporting.

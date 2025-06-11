@@ -114,7 +114,7 @@ export default function Security() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection animation="slideInLeft">
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                <span className="gradient-text">Bank-grade</span> security
+                <span className="text-bitcoin">Bank-grade</span> security
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Your Bitcoin and sensitive data are protected by the same security standards used by leading financial institutions. We take security seriously so you can focus on your business.
@@ -145,7 +145,7 @@ export default function Security() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Multi-layered <span className="gradient-text">security</span> approach
+              Multi-layered <span className="text-bitcoin">security</span> approach
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Every aspect of our platform is designed with security in mind, from data encryption to Bitcoin custody.
@@ -216,7 +216,7 @@ export default function Security() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection animation="slideInLeft">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Our security <span className="gradient-text">commitment</span>
+                Our security <span className="text-bitcoin">commitment</span>
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">

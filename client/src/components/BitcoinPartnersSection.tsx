@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Bitcoin, Shield, Zap, Globe } from "lucide-react";
 import { SiBitcoin, SiLightning } from "react-icons/si";
 import AnimatedSection from "./AnimatedSection";
+import { motion } from "framer-motion";
 
 const partners = [
   {
@@ -85,26 +86,73 @@ export default function BitcoinPartnersSection() {
         </AnimatedSection>
 
         {/* Partners Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {partners.map((partner, index) => (
-            <AnimatedSection key={partner.name} delay={index * 0.1}>
-              <Card className="h-full hover:shadow-lg transition-all duration-300 border-gray-100 hover:border-bitcoin/20">
-                <CardContent className="p-8 text-center">
-                  <div className={`w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-xl bg-gray-50`}>
-                    <partner.logo className={`h-8 w-8 ${partner.color}`} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {partner.name}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{partner.description}</p>
-                  <Badge className={`bg-${partner.color.split('-')[1]}-50 text-${partner.color.split('-')[1]}-600 border-${partner.color.split('-')[1]}-200`}>
-                    {partner.badge}
-                  </Badge>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
-          ))}
-        </div>
+        <AnimatedSection animation="staggerChildren" stagger={0.1}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {partners.map((partner, index) => (
+              <motion.div
+                key={partner.name}
+                variants={{
+                  initial: { opacity: 0, y: 30, scale: 0.9 },
+                  animate: { opacity: 1, y: 0, scale: 1 },
+                }}
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.02,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <Card className="h-full hover:shadow-xl transition-all duration-500 border-gray-100 hover:border-bitcoin/20 group">
+                  <CardContent className="p-8 text-center">
+                    <motion.div 
+                      className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-xl bg-gray-50 group-hover:bg-bitcoin/5 transition-colors duration-300"
+                      whileHover={{ 
+                        scale: 1.1, 
+                        rotate: 5,
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <partner.logo className={`h-8 w-8 ${partner.color}`} />
+                      </motion.div>
+                    </motion.div>
+                    
+                    <motion.h3 
+                      className="text-xl font-semibold text-gray-900 mb-2"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                    >
+                      {partner.name}
+                    </motion.h3>
+                    
+                    <motion.p 
+                      className="text-gray-600 mb-4"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                    >
+                      {partner.description}
+                    </motion.p>
+                    
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 + 0.5 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      <Badge className="bg-bitcoin/10 text-bitcoin border-bitcoin/20">
+                        {partner.badge}
+                      </Badge>
+                    </motion.div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
 
         {/* Circular Economy Statement */}
         <AnimatedSection delay={0.8}>

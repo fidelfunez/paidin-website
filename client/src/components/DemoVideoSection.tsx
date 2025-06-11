@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Play, Pause } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import AnimatedButton from "./AnimatedButton";
+import { motion } from "framer-motion";
 
 export default function DemoVideoSection() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -24,21 +26,40 @@ export default function DemoVideoSection() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <div className="relative bg-black rounded-2xl shadow-2xl overflow-hidden">
+          <motion.div 
+            className="relative bg-black rounded-2xl shadow-2xl overflow-hidden"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
             {/* Video Placeholder */}
             <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative">
               {/* Play Button Overlay */}
-              <Button
-                size="lg"
-                onClick={handlePlayPause}
-                className="absolute z-10 w-20 h-20 rounded-full bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow transition-all duration-300 hover:scale-110"
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {isPlaying ? (
-                  <Pause className="h-8 w-8" />
-                ) : (
-                  <Play className="h-8 w-8 ml-1" />
-                )}
-              </Button>
+                <Button
+                  size="lg"
+                  onClick={handlePlayPause}
+                  className="absolute z-10 w-20 h-20 rounded-full bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow transition-all duration-300"
+                >
+                  <motion.div
+                    key={isPlaying ? 'pause' : 'play'}
+                    initial={{ opacity: 0, rotate: -90 }}
+                    animate={{ opacity: 1, rotate: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {isPlaying ? (
+                      <Pause className="h-8 w-8" />
+                    ) : (
+                      <Play className="h-8 w-8 ml-1" />
+                    )}
+                  </motion.div>
+                </Button>
+              </motion.div>
 
               {/* Placeholder Content */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -53,11 +74,21 @@ export default function DemoVideoSection() {
               
               {/* Simulated Video Progress */}
               {isPlaying && (
-                <div className="absolute bottom-4 left-4 right-4">
+                <motion.div 
+                  className="absolute bottom-4 left-4 right-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="bg-white/20 rounded-full h-1 overflow-hidden">
-                    <div className="bg-bitcoin h-full w-1/3 rounded-full animate-pulse"></div>
+                    <motion.div 
+                      className="bg-bitcoin h-full rounded-full"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "33%" }}
+                      transition={{ duration: 2 }}
+                    />
                   </div>
-                </div>
+                </motion.div>
               )}
             </div>
 
@@ -83,11 +114,11 @@ export default function DemoVideoSection() {
                 </Button>
               </div>
             </div>
-          </div>
+          </motion.div>
         </AnimatedSection>
 
         {/* Video Features */}
-        <AnimatedSection delay={0.4}>
+        <AnimatedSection delay={0.4} animation="staggerChildren" stagger={0.2}>
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             {[
               {
@@ -103,13 +134,33 @@ export default function DemoVideoSection() {
                 description: "Learn how automatic payments work with real-time Bitcoin conversion",
               },
             ].map((feature, index) => (
-              <div key={feature.title} className="text-center">
-                <div className="w-12 h-12 bg-bitcoin/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-bitcoin font-bold">{index + 1}</span>
-                </div>
+              <motion.div 
+                key={feature.title} 
+                className="text-center"
+                variants={{
+                  initial: { opacity: 0, y: 30 },
+                  animate: { opacity: 1, y: 0 },
+                }}
+                whileHover={{ y: -5 }}
+              >
+                <motion.div 
+                  className="w-12 h-12 bg-bitcoin/10 rounded-lg flex items-center justify-center mx-auto mb-4"
+                  whileHover={{ 
+                    scale: 1.1, 
+                    backgroundColor: "hsl(24, 94%, 53%, 0.2)",
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  <motion.span 
+                    className="text-bitcoin font-bold"
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {index + 1}
+                  </motion.span>
+                </motion.div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </AnimatedSection>
@@ -117,17 +168,27 @@ export default function DemoVideoSection() {
         {/* CTA */}
         <AnimatedSection delay={0.6}>
           <div className="text-center mt-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <motion.h3 
+              className="text-2xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               Ready to experience it yourself?
-            </h3>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow">
+            </motion.h3>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <AnimatedButton size="lg" className="bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow" glowEffect={true}>
                 Start Free Trial
-              </Button>
-              <Button size="lg" variant="outline" className="border-bitcoin text-bitcoin hover:bg-bitcoin hover:text-white">
+              </AnimatedButton>
+              <AnimatedButton size="lg" variant="outline" className="border-bitcoin text-bitcoin hover:bg-bitcoin hover:text-white">
                 Schedule Live Demo
-              </Button>
-            </div>
+              </AnimatedButton>
+            </motion.div>
           </div>
         </AnimatedSection>
       </div>

@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -37,37 +38,95 @@ export default function Testimonials() {
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <AnimatedSection key={testimonial.name} delay={index * 0.2}>
-              <Card className="h-full">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-bitcoin rounded-full flex items-center justify-center text-white font-bold mr-4">
-                      {testimonial.initials}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">
-                        {testimonial.name}
+        <AnimatedSection animation="staggerChildren" stagger={0.2}>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                variants={{
+                  initial: { opacity: 0, y: 40, scale: 0.95 },
+                  animate: { opacity: 1, y: 0, scale: 1 },
+                }}
+                whileHover={{ 
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <Card className="h-full hover:shadow-2xl transition-all duration-500 border-gray-100 hover:border-bitcoin/20">
+                  <CardContent className="p-8">
+                    <motion.div 
+                      className="flex items-center mb-6"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                    >
+                      <motion.div 
+                        className="w-12 h-12 bg-bitcoin rounded-full flex items-center justify-center text-white font-bold mr-4"
+                        whileHover={{ 
+                          scale: 1.1, 
+                          rotate: 5,
+                          boxShadow: "0 0 20px rgba(255, 133, 27, 0.3)"
+                        }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {testimonial.initials}
+                      </motion.div>
+                      <div>
+                        <motion.div 
+                          className="font-semibold text-gray-900"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                        >
+                          {testimonial.name}
+                        </motion.div>
+                        <motion.div 
+                          className="text-sm text-gray-500"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                        >
+                          {testimonial.company}
+                        </motion.div>
                       </div>
-                      <div className="text-sm text-gray-500">
-                        {testimonial.company}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 italic mb-4">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="flex text-bitcoin">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
-          ))}
-        </div>
+                    </motion.div>
+                    
+                    <motion.p 
+                      className="text-gray-600 italic mb-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
+                    >
+                      "{testimonial.quote}"
+                    </motion.p>
+                    
+                    <motion.div 
+                      className="flex text-bitcoin"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                    >
+                      {[...Array(5)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ 
+                            duration: 0.3, 
+                            delay: index * 0.1 + 0.6 + i * 0.05 
+                          }}
+                          whileHover={{ scale: 1.2 }}
+                        >
+                          <Star className="h-4 w-4 fill-current" />
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );

@@ -5,6 +5,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Bitcoin } from "lucide-react";
 import BtcPriceTicker from "./BtcPriceTicker";
 import LanguageSwitcher from "./LanguageSwitcher";
+import AnimatedButton from "./AnimatedButton";
+import { motion } from "framer-motion";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -26,12 +28,28 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+    <motion.nav 
+      className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <Bitcoin className="h-8 w-8 text-bitcoin" />
-            <span className="text-2xl font-bold gradient-text">PaidIn</span>
+          <Link href="/" className="flex items-center space-x-2 group">
+            <motion.div
+              whileHover={{ rotate: 360, scale: 1.1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Bitcoin className="h-8 w-8 text-bitcoin" />
+            </motion.div>
+            <motion.span 
+              className="text-2xl font-bold gradient-text"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              PaidIn
+            </motion.span>
           </Link>
 
           {/* Desktop Menu */}
@@ -56,12 +74,12 @@ export default function Navigation() {
 
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher />
-            <Button variant="ghost" className="text-bitcoin hover:text-bitcoin-dark">
+            <AnimatedButton variant="ghost" className="text-bitcoin hover:text-bitcoin-dark">
               Login
-            </Button>
-            <Button className="bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow">
+            </AnimatedButton>
+            <AnimatedButton className="bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow" glowEffect={true}>
               Get Started
-            </Button>
+            </AnimatedButton>
           </div>
 
           {/* Mobile Menu */}
@@ -100,6 +118,6 @@ export default function Navigation() {
           </Sheet>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

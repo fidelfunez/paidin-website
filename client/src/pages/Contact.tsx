@@ -61,7 +61,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Ready to get <span className="gradient-text">started</span>?
+              Ready to get <span className="text-bitcoin">started</span>?
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Contact our team to learn more or start your free trial today. We're here to help you transition to Bitcoin payroll.

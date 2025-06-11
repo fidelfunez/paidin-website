@@ -62,7 +62,7 @@ export default function Careers() {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              We're <span className="gradient-text">hiring</span>!
+              We're <span className="text-bitcoin">hiring</span>!
             </h1>
             <p className="text-xl text-gray-600 mb-8">
               Join our mission to bring Bitcoin payroll to the world. Work with passionate people building the future of money.
@@ -149,7 +149,7 @@ export default function Careers() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection animation="slideInLeft">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Why work at <span className="gradient-text">PaidIn</span>?
+                Why work at <span className="text-bitcoin">PaidIn</span>?
               </h2>
               <p className="text-lg text-gray-600 mb-8">
                 We believe in taking care of our team with competitive benefits, flexible work arrangements, and the opportunity to shape the future of money.

@@ -156,37 +156,96 @@ export default function BitcoinPartnersSection() {
 
         {/* Circular Economy Statement */}
         <AnimatedSection delay={0.8}>
-          <div className="mt-20 text-center bg-bitcoin/5 rounded-2xl p-12">
-            <div className="max-w-4xl mx-auto">
-              <div className="w-16 h-16 bg-bitcoin rounded-full flex items-center justify-center mx-auto mb-6">
+          <motion.div 
+            className="mt-20 text-center bg-bitcoin/5 rounded-2xl p-12 relative overflow-hidden"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Background decoration */}
+            <motion.div
+              className="absolute top-4 right-4 w-24 h-24 bg-bitcoin/10 rounded-full blur-2xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            
+            <div className="max-w-4xl mx-auto relative">
+              <motion.div 
+                className="w-16 h-16 bg-bitcoin rounded-full flex items-center justify-center mx-auto mb-6"
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                whileHover={{ 
+                  scale: 1.1, 
+                  rotate: 360,
+                  transition: { duration: 0.6 }
+                }}
+              >
                 <Bitcoin className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              </motion.div>
+              
+              <motion.h3 
+                className="text-2xl font-bold text-gray-900 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 Building the Circular Bitcoin Economy
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
+              </motion.h3>
+              
+              <motion.p 
+                className="text-lg text-gray-600 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
                 PaidIn is committed to fostering a circular Bitcoin economy where value flows seamlessly between Bitcoin-native businesses and their employees. By choosing Bitcoin payroll, you're not just adopting new technology—you're participating in the future of money.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-bitcoin rounded-full mr-2"></div>
-                  100% Bitcoin reserves
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-bitcoin rounded-full mr-2"></div>
-                  Lightning Network enabled
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-bitcoin rounded-full mr-2"></div>
-                  Open source contributions
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-bitcoin rounded-full mr-2"></div>
-                  Bitcoin education initiatives
-                </div>
-              </div>
+              </motion.p>
+              
+              <motion.div 
+                className="flex flex-wrap justify-center gap-6 text-sm text-gray-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                {[
+                  "100% Bitcoin reserves",
+                  "Lightning Network enabled", 
+                  "Open source contributions",
+                  "Bitcoin education initiatives"
+                ].map((item, index) => (
+                  <motion.div 
+                    key={item}
+                    className="flex items-center"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <motion.div 
+                      className="w-2 h-2 bg-bitcoin rounded-full mr-2"
+                      animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.7, 1, 0.7],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: index * 0.2,
+                      }}
+                    />
+                    {item}
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </AnimatedSection>
       </div>
     </section>

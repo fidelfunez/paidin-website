@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Bitcoin className="h-8 w-8 text-bitcoin" />
-              <span className="text-2xl font-bold gradient-text">PaidIn</span>
+              <span className="text-2xl font-bold text-bitcoin">PaidIn</span>
             </div>
             <p className="text-gray-400 mb-4">
               The future of Bitcoin payroll for modern teams.

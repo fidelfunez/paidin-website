@@ -98,7 +98,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Ready to join the <span className="gradient-text">Bitcoin economy</span>?
+              Ready to join the <span className="text-bitcoin">Bitcoin economy</span>?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
               Start paying your team in Bitcoin today with our simple, secure platform.

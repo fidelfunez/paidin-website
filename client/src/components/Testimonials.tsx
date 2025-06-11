@@ -31,7 +31,7 @@ export default function Testimonials() {
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Trusted by{" "}
-            <span className="gradient-text">forward-thinking</span> companies
+            <span className="text-bitcoin">forward-thinking</span> companies
           </h2>
           <p className="text-xl text-gray-600">
             Join hundreds of companies already paying their teams in Bitcoin

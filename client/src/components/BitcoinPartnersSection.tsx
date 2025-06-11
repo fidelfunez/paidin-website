@@ -63,7 +63,7 @@ export default function BitcoinPartnersSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Powered by the <span className="gradient-text">Bitcoin ecosystem</span>
+            Powered by the <span className="text-bitcoin">Bitcoin ecosystem</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We partner with the most trusted names in Bitcoin to provide you with enterprise-grade infrastructure and security.

@@ -63,7 +63,7 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Simple, <span className="gradient-text">transparent</span> pricing
+            Simple, <span className="text-bitcoin">transparent</span> pricing
           </h2>
           <p className="text-xl text-gray-600">
             Choose the plan that fits your team size and needs

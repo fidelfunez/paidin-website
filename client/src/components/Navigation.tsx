@@ -44,7 +44,7 @@ export default function Navigation() {
               <Bitcoin className="h-8 w-8 text-bitcoin" />
             </motion.div>
             <motion.span 
-              className="text-2xl font-bold gradient-text"
+              className="text-2xl font-bold text-bitcoin"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >

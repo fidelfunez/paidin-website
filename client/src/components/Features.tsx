@@ -44,7 +44,7 @@ export default function Features() {
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Everything you need for{" "}
-            <span className="gradient-text">Bitcoin payroll</span>
+            <span className="text-bitcoin">Bitcoin payroll</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             From salary payments to expense tracking, PaidIn provides all the tools modern teams need to embrace Bitcoin as their primary currency.

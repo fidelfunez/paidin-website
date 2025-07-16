@@ -85,7 +85,7 @@ export default function About() {
               <div className="space-y-6">
                 <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-bitcoin/20 shadow-lg">
                   <Star className="h-4 w-4 text-bitcoin mr-2" />
-                  <span className="text-sm font-medium text-gray-700">Built by Bitcoin believers</span>
+                  <span className="text-sm font-medium text-gray-700">Built for Bitcoin-native businesses</span>
                 </div>
                 
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -98,19 +98,19 @@ export default function About() {
                 
                 <div className="space-y-6 text-xl text-gray-600 leading-relaxed">
                   <p>
-                    Traditional payroll systems weren't built for the Bitcoin economy. We created PaidIn to bridge the gap between conventional business operations and the future of money.
+                    Traditional business platforms weren't built for companies that operate entirely in Bitcoin. We created PaidIn to bridge the gap between conventional business operations and the future of money.
                   </p>
                   <p>
-                    Our mission is to make Bitcoin payroll accessible, compliant, and seamless for companies of all sizes. We believe that every business should have the option to pay their team in the world's most sound money.
+                    Our mission is to make Bitcoin business operations accessible, compliant, and seamless for companies of all sizes. We believe that every business should have the option to run their entire operations in the world's most sound money.
                   </p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 gap-4">
                 {[
-                  "Built by Bitcoin enthusiasts and fintech experts",
-                  "Compliant with global financial regulations",
-                  "Trusted by 500+ companies worldwide",
+                  "Built by Bitcoin enthusiasts and business operations experts",
+                  "Compliant with global financial regulations for Bitcoin businesses",
+                  "Trusted by 500+ companies running entirely in Bitcoin",
                 ].map((point, index) => (
                   <div key={point} className="flex items-center space-x-4 p-4 glass-card rounded-xl">
                     <div className="w-8 h-8 bg-gradient-to-r from-bitcoin to-orange-400 rounded-full flex items-center justify-center">
@@ -214,11 +214,11 @@ export default function About() {
             <div className="flex items-center justify-center mb-6">
               <Zap className="h-8 w-8 text-bitcoin mr-3" />
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-                Ready to join the <span className="text-bitcoin">Bitcoin economy</span>?
+                Ready to run your business in <span className="text-bitcoin">Bitcoin</span>?
               </h2>
             </div>
             <p className="text-xl text-gray-600 mb-8">
-              Start paying your team in Bitcoin today with our simple, secure platform.
+              Start operating your entire business in Bitcoin today with our comprehensive platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

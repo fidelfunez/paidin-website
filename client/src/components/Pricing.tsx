@@ -180,6 +180,12 @@ export default function Pricing() {
                         variant={plan.buttonVariant}
                         glowEffect={plan.popular}
                         hoverScale={1.05}
+                        onClick={() => {
+                          if (plan.buttonText === "Start Free Trial") {
+                            window.open('https://paidin-app.netlify.app/auth', '_blank');
+                          }
+                          // For "Contact Sales" button, you might want to add a different action
+                        }}
                       >
                         {plan.buttonText}
                       </AnimatedButton>

@@ -41,6 +41,7 @@ export default function Hero() {
               <Button 
                 size="lg" 
                 className="btn-primary text-white font-semibold px-8 py-4 text-lg h-auto"
+                onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
               >
                 Start Free Trial
                 <Zap className="ml-2 h-5 w-5" />

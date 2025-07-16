@@ -74,10 +74,18 @@ export default function Navigation() {
 
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher />
-            <AnimatedButton variant="ghost" className="text-bitcoin hover:text-bitcoin-dark">
+            <AnimatedButton 
+              variant="ghost" 
+              className="text-bitcoin hover:text-bitcoin-dark"
+              onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+            >
               Login
             </AnimatedButton>
-            <AnimatedButton className="bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow" glowEffect={true}>
+            <AnimatedButton 
+              className="bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow" 
+              glowEffect={true}
+              onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+            >
               Get Started
             </AnimatedButton>
           </div>
@@ -106,10 +114,23 @@ export default function Navigation() {
                   </Link>
                 ))}
                 <div className="flex flex-col space-y-2 pt-4 border-t">
-                  <Button variant="ghost" className="text-bitcoin hover:text-bitcoin-dark justify-start">
+                  <Button 
+                    variant="ghost" 
+                    className="text-bitcoin hover:text-bitcoin-dark justify-start"
+                    onClick={() => {
+                      window.open('https://paidin-app.netlify.app/auth', '_blank');
+                      setIsOpen(false);
+                    }}
+                  >
                     Login
                   </Button>
-                  <Button className="bg-bitcoin hover:bg-bitcoin-dark text-white justify-start">
+                  <Button 
+                    className="bg-bitcoin hover:bg-bitcoin-dark text-white justify-start"
+                    onClick={() => {
+                      window.open('https://paidin-app.netlify.app/auth', '_blank');
+                      setIsOpen(false);
+                    }}
+                  >
                     Get Started
                   </Button>
                 </div>

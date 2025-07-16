@@ -154,7 +154,11 @@ export default function Features() {
                 Join thousands of companies already paying their teams in Bitcoin
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="btn-primary text-white font-semibold px-8 py-4 text-lg h-auto">
+                <Button 
+                  size="lg" 
+                  className="btn-primary text-white font-semibold px-8 py-4 text-lg h-auto"
+                  onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+                >
                   Start Free Trial
                   <Zap className="ml-2 h-5 w-5" />
                 </Button>

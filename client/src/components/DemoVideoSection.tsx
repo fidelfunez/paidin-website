@@ -118,7 +118,11 @@ export default function DemoVideoSection() {
             Ready to experience it yourself?
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-bitcoin hover:bg-bitcoin-dark text-white">
+            <Button 
+              size="lg" 
+              className="bg-bitcoin hover:bg-bitcoin-dark text-white"
+              onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+            >
               Start Free Trial
             </Button>
             <Button size="lg" variant="outline" className="border-bitcoin text-bitcoin hover:bg-bitcoin hover:text-white">

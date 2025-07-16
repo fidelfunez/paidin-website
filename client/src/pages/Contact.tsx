@@ -316,7 +316,11 @@ export default function Contact() {
               Join thousands of companies already using PaidIn for their payroll needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold px-8 py-4 text-lg h-auto shadow-lg">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold px-8 py-4 text-lg h-auto shadow-lg"
+                onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+              >
                 Start Free Trial
                 <Zap className="ml-2 h-5 w-5" />
               </Button>

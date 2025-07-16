@@ -141,7 +141,11 @@ export default function Security() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 text-lg h-auto shadow-lg">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 text-lg h-auto shadow-lg"
+                  onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+                >
                   Start Free Trial
                   <Zap className="ml-2 h-5 w-5" />
                 </Button>
@@ -346,7 +350,11 @@ export default function Security() {
               Join thousands of companies who trust PaidIn with their most valuable assets.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 text-lg h-auto shadow-lg">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-4 text-lg h-auto shadow-lg"
+                onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+              >
                 Start Free Trial
                 <Zap className="ml-2 h-5 w-5" />
               </Button>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Zap, Shield, TrendingUp } from "lucide-react";
+import BtcPriceCard from "./BtcPriceCard";
 
 export default function Hero() {
   return (
@@ -80,18 +81,8 @@ export default function Hero() {
                   className="rounded-2xl w-full h-auto shadow-2xl"
                 />
                 
-                {/* Floating Stats Card */}
-                <div className="absolute -bottom-6 -left-6 glass-card rounded-2xl p-4 shadow-xl">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gradient-to-r from-bitcoin to-orange-400 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">₿</span>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-gray-900">$67,543</div>
-                      <div className="text-sm text-gray-500">Current BTC Price</div>
-                    </div>
-                  </div>
-                </div>
+                {/* Real-time BTC Price Card */}
+                <BtcPriceCard />
                 
                 {/* Floating Payment Card */}
                 <div className="absolute -top-4 -right-4 glass-card rounded-xl p-3 shadow-lg">

@@ -127,6 +127,12 @@ export default function Footer() {
           <p className="text-xs text-gray-500 mt-2 opacity-60">
             Fidel Fúnez C. — Sovereign Builder, Independent Dev, and Relentless Bitcoiner.
           </p>
+          <p className="text-xs text-gray-500 mt-2 opacity-60">
+            PaidIn was built between Roatán, Honduras 🇭🇳 and The Woodlands, Texas 🇺🇸.
+          </p>
+          <p className="text-xs text-gray-500 mt-1 opacity-60">
+            Dedicated to the people of Honduras, to the builders rising from unlikely places, and to a freer world. ₿
+          </p>
         </div>
       </div>
     </footer>

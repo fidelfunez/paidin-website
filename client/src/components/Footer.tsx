@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="text-2xl font-bold text-bitcoin">PaidIn</span>
             </div>
             <p className="text-gray-400 mb-4">
-              The future of Bitcoin payroll for modern teams.
+              The future of Bitcoin Operations for modern teams.
             </p>
             <div className="flex space-x-4">
               <a
@@ -123,7 +123,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 PaidIn. All rights reserved. Built for the Bitcoin economy.</p>
+          <p>&copy; 2025 PaidIn. All rights reserved. Built with 🧡 for the Bitcoin economy.</p>
+          <p className="text-xs text-gray-500 mt-2 opacity-60">
+            Fidel Fúnez C. — Sovereign Builder Independent Dev, and relentless Bitcoiner.
+          </p>
         </div>
       </div>
     </footer>

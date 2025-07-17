@@ -24,7 +24,7 @@ export default function Hero() {
                 <span className="text-sm font-medium text-gray-700">⚡ The first Bitcoin-native business platform</span>
               </div>
               
-              <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
                 Run Your Business{" "}
                 <span className="relative">
                   <span className="text-bitcoin">Entirely in Bitcoin</span>
@@ -57,7 +57,7 @@ export default function Hero() {
             
             <div className="grid grid-cols-3 gap-4 pt-4">
               {[
-                { icon: CheckCircle, text: "Complete business ops", color: "text-green-500" },
+                { icon: CheckCircle, text: "Complete operations", color: "text-green-500" },
                 { icon: Shield, text: "Enterprise security", color: "text-blue-500" },
                 { icon: TrendingUp, text: "Real-time Bitcoin rates", color: "text-bitcoin" }
               ].map((item) => (

@@ -125,7 +125,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
           <p>&copy; 2025 PaidIn. All rights reserved. Built with 🧡 for the Bitcoin economy.</p>
           <p className="text-xs text-gray-500 mt-2 opacity-60">
-            Fidel Fúnez C. — Sovereign Builder Independent Dev, and relentless Bitcoiner.
+            Fidel Fúnez C. — Sovereign Builder, Independent Dev, and Relentless Bitcoiner.
           </p>
         </div>
       </div>

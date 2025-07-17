@@ -21,11 +21,11 @@ export default function Hero() {
             <div className="space-y-6">
               <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-bitcoin/20 shadow-lg">
                 <Zap className="h-4 w-4 text-bitcoin mr-2" />
-                <span className="text-sm font-medium text-gray-700">⚡ The first Bitcoin-native business platform</span>
+                <span className="text-sm font-medium text-gray-700"> The first Bitcoin-native business platform ⚡</span>
               </div>
               
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
-                Run Your Business{" "}
+                Your Business{" "}
                 <span className="relative">
                   <span className="text-bitcoin">Entirely in Bitcoin</span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-bitcoin to-orange-400 rounded-full opacity-60"></div>

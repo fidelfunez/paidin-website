@@ -43,33 +43,38 @@ export default function BtcPriceCard() {
         <div className="w-12 h-12 bg-gradient-to-r from-bitcoin to-orange-400 rounded-xl flex items-center justify-center">
           <span className="text-white font-bold text-lg">₿</span>
         </div>
-        <div>
+        <div className="flex-1">
           {isLoading ? (
             <div className="text-2xl font-bold text-gray-900 animate-pulse">
               Loading...
             </div>
           ) : btcPrice ? (
             <>
-              <div className="text-2xl font-bold text-gray-900">
-                ${btcPrice.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}
+              <div className="flex items-center justify-between">
+                <div className="text-2xl font-bold text-gray-900">
+                  ${btcPrice.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}
+                </div>
+                <div className="flex items-center space-x-1">
+                  {isPositive ? (
+                    <TrendingUp className="h-3 w-3 text-green-500" />
+                  ) : (
+                    <TrendingDown className="h-3 w-3 text-red-500" />
+                  )}
+                  <span className={`text-xs font-medium ${isPositive ? 'text-green-600' : 'text-red-600'}`}>
+                    {isPositive ? '+' : ''}{btcPrice.changePercent24h.toFixed(2)}%
+                  </span>
+                </div>
               </div>
-              <div className="flex items-center space-x-1">
-                {isPositive ? (
-                  <TrendingUp className="h-3 w-3 text-green-500" />
-                ) : (
-                  <TrendingDown className="h-3 w-3 text-red-500" />
-                )}
-                <span className={`text-xs font-medium ${isPositive ? 'text-green-600' : 'text-red-600'}`}>
-                  {isPositive ? '+' : ''}{btcPrice.changePercent24h.toFixed(2)}%
-                </span>
-              </div>
+              <div className="text-sm text-gray-500 mt-1">Current BTC Price</div>
             </>
           ) : (
-            <div className="text-2xl font-bold text-gray-900">
-              $0
-            </div>
+            <>
+              <div className="text-2xl font-bold text-gray-900">
+                $0
+              </div>
+              <div className="text-sm text-gray-500 mt-1">Current BTC Price</div>
+            </>
           )}
-          <div className="text-sm text-gray-500">Current BTC Price</div>
         </div>
       </div>
     </div>

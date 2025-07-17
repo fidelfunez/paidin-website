@@ -4,22 +4,22 @@ import { Zap, Target, Users, Globe, Bitcoin, Star } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Alex Chen",
+    name: "Fidel Fúnez C.",
     role: "CEO & Founder",
     bio: "Former fintech executive with 10+ years building payment systems",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    image: "",
   },
   {
-    name: "Sarah Johnson",
+    name: "Placeholder",
     role: "CTO",
     bio: "Blockchain architect and security expert from top tech companies",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
   },
   {
-    name: "Michael Rodriguez",
+    name: "Placeholder",
     role: "VP of Product",
     bio: "Product leader focused on user experience and Bitcoin adoption",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300",
+    image: "",
   },
 ];
 

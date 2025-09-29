@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Bitcoin } from "lucide-react";
+import { Menu } from "lucide-react";
 import BtcPriceTicker from "./BtcPriceTicker";
 import LanguageSwitcher from "./LanguageSwitcher";
 import AnimatedButton from "./AnimatedButton";
@@ -38,17 +38,22 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2 group">
             <motion.div
-              whileHover={{ rotate: 360, scale: 1.1 }}
-              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
             >
-              <Bitcoin className="h-8 w-8 text-bitcoin" />
+              <img 
+                src="/paidin-logo.svg" 
+                alt="PaidIn Logo" 
+                className="h-8 w-8"
+              />
             </motion.div>
             <motion.span 
-              className="text-2xl font-bold text-bitcoin"
+              className="text-2xl font-bold"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              PaidIn
+              <span className="text-black">Paid</span><span className="text-bitcoin">In</span>
             </motion.span>
           </Link>
 

@@ -10,8 +10,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <Bitcoin className="h-8 w-8 text-bitcoin" />
-              <span className="text-2xl font-bold text-bitcoin">PaidIn</span>
+              <img 
+                src="/paidin-logo.svg" 
+                alt="PaidIn Logo" 
+                className="h-8 w-8"
+              />
+              <span className="text-2xl font-bold" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                <span className="text-white">Paid</span><span className="text-bitcoin">In</span>
+              </span>
             </div>
             <p className="text-gray-400 mb-4">
               The future of Bitcoin Operations for modern teams.

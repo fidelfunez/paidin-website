@@ -82,14 +82,14 @@ export default function Navigation() {
             <AnimatedButton 
               variant="ghost" 
               className="text-bitcoin hover:text-bitcoin-dark"
-              onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+              onClick={() => window.location.href = 'https://app.paidin.io'}
             >
               Login
             </AnimatedButton>
             <AnimatedButton 
               className="bg-bitcoin hover:bg-bitcoin-dark text-white bitcoin-glow" 
               glowEffect={true}
-              onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+              onClick={() => window.location.href = 'https://app.paidin.io'}
             >
               Get Started
             </AnimatedButton>
@@ -123,7 +123,7 @@ export default function Navigation() {
                     variant="ghost" 
                     className="text-bitcoin hover:text-bitcoin-dark justify-start"
                     onClick={() => {
-                      window.open('https://paidin-app.netlify.app/auth', '_blank');
+                      window.location.href = 'https://app.paidin.io';
                       setIsOpen(false);
                     }}
                   >
@@ -132,7 +132,7 @@ export default function Navigation() {
                   <Button 
                     className="bg-bitcoin hover:bg-bitcoin-dark text-white justify-start"
                     onClick={() => {
-                      window.open('https://paidin-app.netlify.app/auth', '_blank');
+                      window.location.href = 'https://app.paidin.io';
                       setIsOpen(false);
                     }}
                   >

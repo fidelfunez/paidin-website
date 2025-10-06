@@ -8,9 +8,10 @@ import { motion } from "framer-motion";
 import { Bitcoin } from "lucide-react";
 
 const quotes = [
-  "Bitcoin is a remarkable cryptographic achievement... The ability to create something that is not duplicable in the digital world has enormous value. - Eric Schmidt",
+  "Bitcoin is a swarm of cyber hornets serving the goddess of wisdom, feeding on the fire of truth, exponentially growing ever smarter, faster, and stronger behind a wall of encrypted energy. - Michael Saylor",
   "The root problem with conventional currency is all the trust that's required to make it work. - Satoshi Nakamoto",
   "Running a business that accepts Bitcoin is like having a bank account that the whole world can pay into. - Andreas Antonopoulos",
+  "Bitcoin will do to banks what email did to the postal industry. - Hal Finney",
 ];
 
 function BitcoinTicker() {

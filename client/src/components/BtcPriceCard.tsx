@@ -38,19 +38,21 @@ export default function BtcPriceCard() {
   const isPositive = btcPrice?.changePercent24h && btcPrice.changePercent24h >= 0;
 
   return (
-    <div className="absolute -bottom-6 -left-6 glass-card rounded-2xl p-4 shadow-xl">
+    <div className="absolute -bottom-20 -left-6 bg-gradient-to-br from-orange-500/30 to-amber-500/25 backdrop-blur-md rounded-xl p-4 shadow-xl hover:bg-orange-500/40 transition-all duration-300 hover:scale-105">
       <div className="flex items-center space-x-3">
-        <div className="w-12 h-12 bg-gradient-to-r from-bitcoin to-orange-400 rounded-xl flex items-center justify-center">
-          <span className="text-white font-bold text-lg">₿</span>
-        </div>
+        <img 
+          src="/app - graphic designs/Bitcoin - logo.png" 
+          alt="Bitcoin Logo" 
+          className="h-8 w-8"
+        />
         <div>
           {isLoading ? (
-            <div className="text-2xl font-bold text-gray-900 animate-pulse">
+            <div className="text-xl font-bold text-gray-900 animate-pulse">
               Loading...
             </div>
           ) : btcPrice ? (
             <>
-              <div className="text-2xl font-bold text-gray-900">
+              <div className="text-xl font-bold text-gray-900">
                 ${btcPrice.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}
               </div>
               <div className="flex items-center space-x-1">
@@ -67,7 +69,7 @@ export default function BtcPriceCard() {
             </>
           ) : (
             <>
-              <div className="text-2xl font-bold text-gray-900">
+              <div className="text-xl font-bold text-gray-900">
                 $0
               </div>
               <div className="text-sm text-gray-500 mt-1">Current BTC Price</div>

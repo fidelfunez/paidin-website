@@ -20,20 +20,19 @@ export default function Hero() {
           <div className="space-y-8">
             <div className="space-y-6">
               <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-bitcoin/20 shadow-lg">
-                <Zap className="h-4 w-4 text-bitcoin mr-2" />
-                <span className="text-sm font-medium text-gray-700"> The first Bitcoin-native business platform ⚡</span>
+                <span className="text-sm font-semibold text-gray-800"> The first Bitcoin-native business platform ⚡</span>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight">
-                Your Business{" "}
-                <span className="relative">
-                  <span className="text-bitcoin">Entirely in Bitcoin</span>
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight">
+                <span className="block">Run Your Business</span>
+                <span className="relative block">
+                  <span className="text-bitcoin">100% in Bitcoin</span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-bitcoin to-orange-400 rounded-full opacity-60"></div>
                 </span>
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                PaidIn is the complete business operations platform for companies who embrace Bitcoin as their primary currency. From payroll to expenses, compliance to analytics - everything in Bitcoin.
+                Break free from traditional banking. PaidIn is the complete business operations platform built for the Bitcoin economy. From payroll to compliance, everything in the world's soundest money.
               </p>
             </div>
             
@@ -73,22 +72,22 @@ export default function Hero() {
             {/* Main Image with Glass Effect */}
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-bitcoin to-orange-400 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <div className="relative glass-card rounded-3xl p-6">
+              <div className="relative bg-gradient-to-br from-orange-500/30 to-amber-500/25 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden p-4">
                 <img
                   src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
                   alt="Modern team collaborating on Bitcoin business operations"
-                  className="rounded-2xl w-full h-auto shadow-2xl"
+                  className="w-full h-full object-cover rounded-2xl"
                 />
-                
-                {/* Real-time BTC Price Card */}
-                <BtcPriceCard />
-                
-                {/* Floating Payment Card */}
-                <div className="absolute -top-4 -right-4 glass-card rounded-xl p-3 shadow-lg">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-medium text-gray-700">Business Operations</span>
-                  </div>
+              </div>
+              
+              {/* Real-time BTC Price Card */}
+              <BtcPriceCard />
+              
+              {/* Floating Payment Card */}
+              <div className="absolute -top-4 -right-4 bg-gradient-to-br from-orange-500/30 to-amber-500/25 backdrop-blur-md rounded-xl p-3 shadow-lg hover:bg-orange-500/40 transition-all duration-300 hover:scale-105">
+                <div className="flex items-center space-x-2">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-gray-700">Business Operations</span>
                 </div>
               </div>
             </div>

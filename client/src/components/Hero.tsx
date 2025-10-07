@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Zap, Shield, TrendingUp, Bitcoin } from "lucide-react";
+import { CheckCircle, Zap, Shield, TrendingUp } from "lucide-react";
 import BtcPriceCard from "./BtcPriceCard";
 import { motion } from "framer-motion";
 
@@ -108,7 +108,11 @@ export default function Hero() {
         >
           {quotes.concat(quotes).map((quote, index) => (
             <div key={index} className="flex items-center space-x-2">
-              <Bitcoin className="h-5 w-5" />
+              <img 
+                src="/app - graphic designs/Bitcoin - logo - yellow.png" 
+                alt="Bitcoin" 
+                className="h-5 w-5"
+              />
               <span className="text-sm">{quote}</span>
             </div>
           ))}

@@ -38,7 +38,7 @@ export default function BtcPriceCard() {
   const isPositive = btcPrice?.changePercent24h && btcPrice.changePercent24h >= 0;
 
   return (
-    <div className="absolute -bottom-20 -left-6 bg-gradient-to-br from-orange-500/30 to-amber-500/25 backdrop-blur-md rounded-xl p-4 shadow-xl hover:bg-orange-500/40 transition-all duration-300 hover:scale-105">
+    <div className="absolute -bottom-20 -left-6 bg-white/20 backdrop-blur-md rounded-xl p-4 shadow-2xl border border-white/40 hover:bg-white/30 transition-all duration-300 hover:scale-105">
       <div className="flex items-center space-x-3">
         <img 
           src="/app - graphic designs/Bitcoin - logo.png" 

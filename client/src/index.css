@@ -226,4 +226,26 @@
     background-size: 200% 100%;
     animation: shine 3s ease-in-out infinite;
   }
+
+  /* Cross-browser hero section consistency */
+  section {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Ensure min-h-screen works consistently */
+  html, body {
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* SVG rendering consistency across browsers */
+  img[src$=".svg"] {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
 }

@@ -45,6 +45,11 @@ export default function Navigation() {
                 src="/paidin-logo.svg" 
                 alt="PaidIn Logo" 
                 className="h-8 w-8"
+                style={{ 
+                  imageRendering: '-webkit-optimize-contrast',
+                  WebkitBackfaceVisibility: 'hidden',
+                  backfaceVisibility: 'hidden'
+                }}
               />
             </motion.div>
             <motion.span 

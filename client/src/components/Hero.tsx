@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Zap, Shield, TrendingUp } from "lucide-react";
+import { CheckCircle, Zap, Shield, TrendingUp, Bitcoin } from "lucide-react";
 import BtcPriceCard from "./BtcPriceCard";
+import { motion } from "framer-motion";
+
+const quotes = [
+  "Bitcoin is a swarm of cyber hornets serving the goddess of wisdom, feeding on the fire of truth, exponentially growing ever smarter, faster, and stronger behind a wall of encrypted energy. - Michael Saylor",
+  "The root problem with conventional currency is all the trust that's required to make it work. - Satoshi Nakamoto",
+  "Running a business that accepts Bitcoin is like having a bank account that the whole world can pay into. - Andreas Antonopoulos",
+  "Bitcoin will do to banks what email did to the postal industry. - Hal Finney",
+];
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 pb-20 overflow-hidden">
+    <section className="relative pt-20 pb-20 overflow-hidden min-h-screen flex items-center">
       {/* Animated Background */}
       <div className="absolute inset-0 animated-bg opacity-5"></div>
       
@@ -15,8 +23,8 @@ export default function Hero() {
       <div className="absolute top-32 left-10 w-24 h-24 bg-bitcoin/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-32 right-20 w-32 h-32 bg-orange-300/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           <div className="space-y-8">
             <div className="space-y-6">
               <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-bitcoin/20 shadow-lg">
@@ -32,7 +40,7 @@ export default function Hero() {
               </h1>
               
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                Break free from traditional banking. PaidIn is the complete business operations platform built for the Bitcoin economy. From payroll to compliance, everything in the world's soundest money.
+                The bridge to the Bitcoin standard. PaidIn is the complete business operations platform for any company ready to embrace Bitcoin. From payroll to compliance, everything in the world's soundest money.
               </p>
             </div>
             
@@ -40,7 +48,7 @@ export default function Hero() {
               <Button 
                 size="lg" 
                 className="btn-primary text-white font-semibold px-8 py-4 text-lg h-auto"
-                onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
+                onClick={() => window.location.href = 'https://app.paidin.io'}
               >
                 Start Free Trial
                 <Zap className="ml-2 h-5 w-5" />
@@ -72,27 +80,39 @@ export default function Hero() {
             {/* Main Image with Glass Effect */}
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-bitcoin to-orange-400 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <div className="relative bg-gradient-to-br from-orange-500/30 to-amber-500/25 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden p-4">
+              <div className="relative bg-gradient-to-br from-orange-500/30 to-amber-500/25 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden p-2">
                 <img
-                  src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                  alt="Modern team collaborating on Bitcoin business operations"
+                  src="/website-photos/hero-image.webp"
+                  alt="PaidIn - Bitcoin Business Operations Platform"
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
               
               {/* Real-time BTC Price Card */}
               <BtcPriceCard />
-              
-              {/* Floating Payment Card */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-br from-orange-500/30 to-amber-500/25 backdrop-blur-md rounded-xl p-3 shadow-lg hover:bg-orange-500/40 transition-all duration-300 hover:scale-105">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-medium text-gray-700">Business Operations</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
+      </div>
+      
+      {/* Bitcoin Ticker */}
+      <div className="absolute bottom-0 left-0 right-0 bg-bitcoin text-white py-4 overflow-hidden">
+        <motion.div
+          className="flex items-center space-x-12 whitespace-nowrap"
+          animate={{ x: [-1000, 0] }}
+          transition={{
+            duration: 60,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          {quotes.concat(quotes).map((quote, index) => (
+            <div key={index} className="flex items-center space-x-2">
+              <Bitcoin className="h-5 w-5" />
+              <span className="text-sm">{quote}</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

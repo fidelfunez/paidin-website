@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Zap, Shield, TrendingUp } from "lucide-react";
-import BtcPriceCard from "./BtcPriceCard";
+import { Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const quotes = [
@@ -25,71 +24,60 @@ export default function Hero() {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
-          <div className="space-y-8">
-            <div className="space-y-6">
+          <div className="space-y-10">
+            <div className="space-y-8">
               <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-bitcoin/20 shadow-lg">
-                <span className="text-sm font-semibold text-gray-800"> The first Bitcoin-native business platform ⚡</span>
+                <span className="text-sm font-semibold text-gray-800">⚡ The first Bitcoin-native business platform</span>
               </div>
               
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight">
-                <span className="block">Run Your Business</span>
+              <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[1.1]">
+                <span className="block">Bitcoin Business</span>
                 <span className="relative block">
-                  <span className="text-bitcoin">100% in Bitcoin</span>
+                  <span className="text-bitcoin">Operations</span>
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-bitcoin to-orange-400 rounded-full opacity-60"></div>
                 </span>
               </h1>
               
-              <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                The bridge to the Bitcoin standard. PaidIn is the complete business operations platform for any company ready to embrace Bitcoin. From payroll to compliance, everything in the world's soundest money.
+              <p className="text-2xl lg:text-3xl text-gray-600 leading-relaxed max-w-2xl font-light">
+                Everything you need to operate your business in Bitcoin. Payroll. Expenses. Compliance. All in one platform.
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-6 items-start">
               <Button 
                 size="lg" 
-                className="btn-primary text-white font-semibold px-8 py-4 text-lg h-auto"
+                className="btn-primary text-white font-bold px-12 py-6 text-xl h-auto shadow-2xl hover:shadow-bitcoin/50 transition-all duration-300 hover:scale-105"
                 onClick={() => window.location.href = 'https://app.paidin.io'}
               >
-                Start Free Trial
-                <Zap className="ml-2 h-5 w-5" />
+                Get Started Free
+                <Zap className="ml-2 h-6 w-6" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-bitcoin text-bitcoin hover:bg-bitcoin hover:text-white font-semibold px-8 py-4 text-lg h-auto transition-all duration-300"
+              <button 
+                className="text-lg text-gray-600 hover:text-bitcoin font-semibold underline underline-offset-4 decoration-2 transition-colors"
               >
-                Watch Demo
-              </Button>
+                Watch Demo →
+              </button>
             </div>
             
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              {[
-                { icon: CheckCircle, text: "Complete operations", color: "text-green-500" },
-                { icon: Shield, text: "Enterprise security", color: "text-blue-500" },
-                { icon: TrendingUp, text: "Real-time Bitcoin rates", color: "text-bitcoin" }
-              ].map((item) => (
-                <div key={item.text} className="flex items-center space-x-2 group">
-                  <item.icon className={`h-5 w-5 ${item.color} group-hover:scale-110 transition-transform`} />
-                  <span className="text-sm font-medium text-gray-700">{item.text}</span>
-                </div>
-              ))}
+            {/* Trust Signal */}
+            <div className="pt-8 border-t border-gray-200">
+              <p className="text-sm text-gray-500 font-medium">
+                🚀 Built for the Bitcoin economy  •  🔒 Enterprise-grade security  •  ⚡ Lightning-fast operations
+              </p>
             </div>
           </div>
 
           <div className="relative lg:pl-8">
-            {/* Main Image with Glass Effect */}
+            {/* Main Image - Clean, minimal */}
             <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-bitcoin to-orange-400 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <div className="relative bg-gradient-to-br from-orange-500/30 to-amber-500/25 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden p-2">
+              <div className="absolute -inset-6 bg-gradient-to-r from-bitcoin to-orange-400 rounded-3xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative bg-gradient-to-br from-orange-500/20 to-amber-500/15 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden p-3 border border-white/40">
                 <img
                   src="/website-photos/hero-image.webp"
                   alt="PaidIn - Bitcoin Business Operations Platform"
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
-              
-              {/* Real-time BTC Price Card */}
-              <BtcPriceCard />
             </div>
           </div>
         </div>

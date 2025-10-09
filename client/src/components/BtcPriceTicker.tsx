@@ -52,9 +52,11 @@ export default function BtcPriceTicker() {
 
   return (
     <div className="flex items-center space-x-2 text-sm">
-      <div className="w-4 h-4 bg-bitcoin rounded-full flex items-center justify-center">
-        <span className="text-white text-xs font-bold">₿</span>
-      </div>
+      <img 
+        src="/app - graphic designs/Bitcoin - logo.png" 
+        alt="Bitcoin" 
+        className="h-5 w-5"
+      />
       <span className="font-medium text-gray-900">
         ${btcPrice.price.toLocaleString('en-US', { maximumFractionDigits: 0 })}
       </span>

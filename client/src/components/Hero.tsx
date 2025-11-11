@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, CheckCircle2, Bitcoin as BitcoinIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const rotatingWords = [
+  "Operations",
   "Payroll",
+  "Accounting",
+  "Invoicing",
   "Compliance",
   "Expenses",
-  "Operations",
 ];
 
 export default function Hero() {
@@ -21,177 +23,194 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative pt-16 overflow-hidden h-screen flex items-start justify-center bg-white">
-      {/* Animated Gradient Mesh Background */}
+    <section className="relative pt-16 overflow-hidden h-screen flex items-center bg-white">
+      {/* Refined Background - More Subtle */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-white to-amber-100"></div>
+        {/* Base gradient - Enhanced with more orange left, purple right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-100/90 via-orange-50/40 via-white to-purple-50/70"></div>
         
-        {/* Floating gradient orbs - MOVING AROUND */}
-        <div className="absolute top-0 -left-4 w-[500px] h-[500px] bg-gradient-to-br from-bitcoin/50 to-orange-400/40 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-1/4 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-purple-400/30 to-pink-300/25 rounded-full blur-3xl animate-float-reverse"></div>
-        <div className="absolute bottom-0 left-1/3 w-[600px] h-[600px] bg-gradient-to-tr from-amber-400/40 to-orange-400/30 rounded-full blur-3xl animate-pulse"></div>
-        
-        {/* Additional moving orbs for better coverage */}
-        <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-gradient-to-r from-orange-300/25 to-amber-300/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s', animationDuration: '8s' }}></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-gradient-to-l from-purple-300/20 to-pink-300/15 rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '4s', animationDuration: '10s' }}></div>
-        
-        {/* Left side orange orbs - different tones and pulsing */}
-        <div className="absolute top-1/3 -left-8 w-[450px] h-[450px] bg-gradient-to-br from-orange-400/30 to-orange-500/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s', animationDuration: '6s' }}></div>
-        <div className="absolute bottom-1/3 -left-12 w-[380px] h-[380px] bg-gradient-to-tr from-amber-400/35 to-orange-400/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '3s', animationDuration: '7s' }}></div>
-        <div className="absolute top-2/3 left-0 w-[320px] h-[320px] bg-gradient-to-r from-orange-500/25 to-amber-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '5s', animationDuration: '5s' }}></div>
+        {/* Floating gradient orbs - More Subtle Movement */}
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-0 -left-4 w-[600px] h-[600px] bg-gradient-to-br from-bitcoin/45 to-orange-400/40 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, -80, 0],
+            y: [0, -60, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-purple-400/25 to-pink-300/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, 60, 0],
+            y: [0, 80, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-0 left-1/3 w-[600px] h-[600px] bg-gradient-to-tr from-amber-400/25 to-orange-400/20 rounded-full blur-3xl"
+        />
         
         {/* Subtle grid overlay */}
-        <div className="absolute inset-0 opacity-[0.05]" style={{
+        <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `radial-gradient(circle, #f7931a 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+          backgroundSize: '60px 60px'
         }}></div>
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-12">
-        <div className="grid lg:grid-cols-2 gap-8 items-start w-full">
-          {/* Left: Content */}
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center h-full">
+          {/* Left: Content - Reduced column span for larger screenshot */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 space-y-6"
           >
-            {/* Small Badge */}
-            <div className="inline-flex items-center px-6 py-3 bg-white/20 backdrop-blur-md rounded-full border border-white/30 shadow-lg relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-bitcoin/20 via-orange-400/10 to-bitcoin/20 rounded-full"></div>
-              <div className="w-2 h-2 bg-bitcoin rounded-full animate-pulse mr-3 relative z-10 shadow-sm"></div>
-              <span className="text-sm font-bold text-bitcoin relative z-10 drop-shadow-sm">The Bitcoin Business Platform ⚡</span>
+            {/* Minimal Badge */}
+            <div className="flex items-center gap-3 mb-4">
+              <Zap className="h-4 w-4 text-bitcoin" />
+              <span className="text-bitcoin text-xs font-bold tracking-[0.2em] uppercase">The Bitcoin Business Platform</span>
+              <div className="h-px w-12 bg-bitcoin/30"></div>
             </div>
 
-            {/* Massive Headline with Rotating Words */}
-            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-black leading-[1.1]">
+            {/* Massive Headline - Enhanced Typography */}
+            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tight">
               <span className="block mb-2 text-bitcoin">Bitcoin</span>
               <div className="relative inline-block min-h-[1.2em]">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentWordIndex}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
+                    exit={{ opacity: 0, y: -30 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-gray-900 inline-block"
                   >
                     {rotatingWords[currentWordIndex]}
                   </motion.span>
                 </AnimatePresence>
               </div>
+              <span className="block text-4xl lg:text-5xl xl:text-6xl text-gray-400 font-light mt-2">
+                for everyone
+              </span>
             </h1>
 
-            {/* Subheadline */}
-            <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed font-normal max-w-xl">
-              The complete business operations platform built for the Bitcoin standard. Run payroll, manage expenses, and ensure compliance—all in Bitcoin.
+            {/* Subheadline - Enhanced */}
+            <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed font-light max-w-xl">
+              Run your business operations entirely on Bitcoin.{" "}
+              <span className="text-gray-900 font-medium">No experience or technical knowledge required.</span>
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
+            {/* CTAs - Refined Styling */}
+            <div className="flex flex-col sm:flex-row gap-4 items-start pt-2">
               <Button
                 size="lg"
-                className="bg-bitcoin hover:bg-bitcoin-dark text-white font-semibold px-10 py-6 text-lg h-auto shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="bg-gradient-to-r from-bitcoin to-orange-500 hover:from-orange-500 hover:to-bitcoin text-white font-black px-10 py-6 text-lg h-auto shadow-2xl hover:shadow-bitcoin/40 hover:scale-105 transition-all duration-300 rounded-full"
                 onClick={() => window.location.href = 'https://app.paidin.io'}
               >
                 Get Started Free
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-3 h-5 w-5" />
               </Button>
-              <button className="text-lg text-gray-700 hover:text-bitcoin font-semibold transition-colors flex items-center gap-2 py-6">
+              <button className="text-base lg:text-lg text-gray-700 hover:text-bitcoin font-semibold transition-colors flex items-center gap-2 py-6 group">
                 Watch Demo
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
-            {/* Trust Signal */}
-            <p className="text-sm text-gray-500 pt-4">
-              Trusted by Bitcoin-forward companies • Enterprise-grade security • Lightning fast
-            </p>
+            {/* Trust Signals - Visual Minimal */}
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              {[
+                "Trusted by Bitcoin-forward companies",
+                "Enterprise-grade security",
+                "Lightning fast"
+              ].map((item, index) => (
+                <motion.div
+                  key={item}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                  className="flex items-center gap-1.5 text-[11px] lg:text-xs text-gray-500 font-light whitespace-nowrap"
+                >
+                  <CheckCircle2 className="h-3 w-3 lg:h-3.5 lg:w-3.5 text-bitcoin flex-shrink-0" />
+                  <span>{item}</span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
-          {/* Right: Product Screenshot with Floating Elements */}
+          {/* Right: Product Video - Horizontal 16:9 */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 relative"
           >
-            {/* Dashboard Image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 h-[565px]">
-              <img
-                src="/website-photos/hero-image.png"
-                alt="PaidIn Dashboard - Bitcoin Business Operations"
+            {/* Video Container - 16:9 Aspect Ratio */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200/50 aspect-video bg-gray-900">
+              <video
                 className="w-full h-full object-cover"
-              />
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/website-photos/hero-video-poster.jpg"
+              >
+                <source src="/videos/paidin-demo.mp4" type="video/mp4" />
+                {/* Fallback image if video doesn't load */}
+                <img
+                  src="/website-photos/hero-image.png"
+                  alt="PaidIn Dashboard - Bitcoin Business Operations"
+                  className="w-full h-full object-cover"
+                />
+              </video>
+              
+              {/* Play Button Overlay (optional - shows when paused) */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/10 transition-colors cursor-pointer group">
+                <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-xl">
+                  <svg className="w-6 h-6 text-bitcoin ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
             </div>
             
-            {/* Subtle glow effect */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-bitcoin/20 to-orange-400/20 rounded-3xl blur-3xl -z-10 opacity-30"></div>
+            {/* Enhanced Glow Effect - Animated */}
+            <motion.div
+              animate={{
+                scale: [1, 1.05, 1],
+                opacity: [0.3, 0.4, 0.3],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute -inset-8 bg-gradient-to-r from-bitcoin/30 to-orange-400/30 rounded-3xl blur-3xl -z-10"
+            />
+            
           </motion.div>
         </div>
       </div>
-      
-      {/* Bitcoin Quotes Ticker - Simple like live version */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 2.0 }}
-        className="absolute bottom-0 left-0 right-0"
-      >
-        <div className="bg-bitcoin h-12 flex items-center overflow-hidden">
-          <div className="flex items-center space-x-8 animate-scroll">
-            {/* Quote 1 - Satoshi Nakamoto (Main) */}
-            <div className="flex items-center space-x-3 whitespace-nowrap">
-              <img 
-                src="/app - graphic designs/Bitcoin - logo - yellow.png?v=2" 
-                alt="Bitcoin" 
-                className="h-4 w-4"
-              />
-              <span className="text-white text-sm font-medium">"If you don't believe me or don't get it, I don't have time to try to convince you, sorry." — Satoshi Nakamoto</span>
-            </div>
-            
-            {/* Quote 2 - Hal Finney */}
-            <div className="flex items-center space-x-3 whitespace-nowrap">
-              <img 
-                src="/app - graphic designs/Bitcoin - logo - yellow.png?v=2" 
-                alt="Bitcoin" 
-                className="h-4 w-4"
-              />
-              <span className="text-white text-sm font-medium">"Running Bitcoin is the most fun you can have with your computer." — Hal Finney</span>
-            </div>
-            
-            {/* Quote 3 - Michael Saylor */}
-            <div className="flex items-center space-x-3 whitespace-nowrap">
-              <img 
-                src="/app - graphic designs/Bitcoin - logo - yellow.png?v=2" 
-                alt="Bitcoin" 
-                className="h-4 w-4"
-              />
-              <span className="text-white text-sm font-medium">"Bitcoin is the first monetary network that is completely digital, completely global, and completely decentralized." — Michael Saylor</span>
-            </div>
-            
-            {/* Quote 4 - Andreas Antonopoulos */}
-            <div className="flex items-center space-x-3 whitespace-nowrap">
-              <img 
-                src="/app - graphic designs/Bitcoin - logo - yellow.png?v=2" 
-                alt="Bitcoin" 
-                className="h-4 w-4"
-              />
-              <span className="text-white text-sm font-medium">"Bitcoin is not just a currency, it's a new form of money that is native to the internet." — Andreas Antonopoulos</span>
-            </div>
-            
-            {/* Repeat for seamless loop */}
-            <div className="flex items-center space-x-3 whitespace-nowrap">
-              <img 
-                src="/app - graphic designs/Bitcoin - logo - yellow.png?v=2" 
-                alt="Bitcoin" 
-                className="h-4 w-4"
-              />
-              <span className="text-white text-sm font-medium">"If you don't believe me or don't get it, I don't have time to try to convince you, sorry." — Satoshi Nakamoto</span>
-            </div>
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 }

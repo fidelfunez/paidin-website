@@ -1,14 +1,28 @@
 import { Link } from "wouter";
-import { Bitcoin } from "lucide-react";
-import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
-import NewsletterSignup from "./NewsletterSignup";
+import { Bitcoin, Mail } from "lucide-react";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-2 md:col-span-1">
+    <div className="relative bg-[#0f161f]">
+      {/* Background layer for rounded corners */}
+      <div className="absolute inset-0 bg-[#0f161f] pointer-events-none" style={{ zIndex: 0 }} />
+      
+      {/* Main Footer Section - In Front */}
+      <footer 
+        className="relative bg-gray-900 text-white border-t border-gray-800 rounded-b-3xl lg:rounded-b-[2rem]"
+        style={{
+          position: 'relative',
+          zIndex: 20,
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.3)',
+        }}
+      >
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+          {/* Brand Column - Spans 2 on large screens */}
+          <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <img 
                 src="/paidin-logo.svg" 
@@ -19,128 +33,235 @@ export default function Footer() {
                 <span className="text-white">Paid</span><span className="text-bitcoin">In</span>
               </span>
             </div>
-            <p className="text-gray-400 mb-4">
-              The future of Bitcoin Operations for modern teams.
+            <p className="text-gray-400 mb-6 max-w-sm leading-relaxed">
+              The future of Bitcoin Operations for modern teams. Enterprise-grade payroll, accounting, compliance, invoicing, reporting, and operations infrastructure.
             </p>
-            <div className="flex space-x-4">
+            
+            {/* Social Links */}
+            <div className="flex space-x-4 mb-6">
               <a
                 href="#"
-                className="text-gray-400 hover:text-bitcoin transition-colors duration-200"
+                className="text-gray-400 hover:text-bitcoin transition-colors duration-200 p-2 rounded-lg hover:bg-gray-800"
+                aria-label="X (Twitter)"
               >
-                <FaTwitter className="h-5 w-5" />
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-bitcoin transition-colors duration-200"
+                className="text-gray-400 hover:text-bitcoin transition-colors duration-200 p-2 rounded-lg hover:bg-gray-800"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="h-5 w-5" />
+              </a>
+              <a
+                href="#"
+                className="text-gray-400 hover:text-bitcoin transition-colors duration-200 p-2 rounded-lg hover:bg-gray-800"
+                aria-label="LinkedIn"
               >
                 <FaLinkedin className="h-5 w-5" />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-bitcoin transition-colors duration-200"
+                className="text-gray-400 hover:text-bitcoin transition-colors duration-200 p-2 rounded-lg hover:bg-gray-800"
+                aria-label="GitHub"
               >
                 <FaGithub className="h-5 w-5" />
               </a>
             </div>
+
+            {/* Subtle Newsletter CTA */}
+            <div className="flex items-center space-x-2 text-sm text-gray-400">
+              <Mail className="h-4 w-4" />
+              <Link href="/contact" className="hover:text-bitcoin transition-colors duration-200">
+                Get product updates
+              </Link>
+            </div>
           </div>
 
+          {/* Product Links */}
           <div>
-            <h4 className="font-semibold mb-4">Product</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">Product</h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="/features" className="hover:text-white transition-colors duration-200">
+                <Link href="/features" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="hover:text-white transition-colors duration-200">
+                <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/security" className="hover:text-white transition-colors duration-200">
+                <Link href="/security" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Security
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors duration-200">
-                  API
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                  API Documentation
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                  Integrations
                 </a>
               </li>
             </ul>
           </div>
 
+          {/* Company Links */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">Company</h4>
+            <ul className="space-y-3">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors duration-200">
+                <Link href="/about" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-white transition-colors duration-200">
+                <Link href="/careers" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Careers
                 </Link>
               </li>
               <li>
-                <a href="https://medium.com/@paidin" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">
+                <a href="https://medium.com/@paidin" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Blog
                 </a>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors duration-200">
+                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Contact
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Resources & Legal */}
           <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="font-semibold text-white mb-6 text-sm uppercase tracking-wider">Resources</h4>
+            <ul className="space-y-3">
               <li>
-                <a href="#" className="hover:text-white transition-colors duration-200">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors duration-200">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Help Center
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors duration-200">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                  Documentation
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors duration-200">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   Terms of Service
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
+                  Cookie Policy
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="mb-8">
-          <NewsletterSignup />
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-gray-400">
+                <p>&copy; {new Date().getFullYear()} PaidIn, Inc.</p>
+                <span className="hidden md:inline">•</span>
+                <p>Built for the Bitcoin economy.</p>
+              </div>
+              <div className="flex items-center space-x-1 text-xs text-gray-500">
+                <Bitcoin className="h-3 w-3" />
+                <span>Powered by Bitcoin</span>
+              </div>
+            </div>
+            
+            {/* Additional Footer Lines */}
+            <div className="flex flex-col gap-2 text-sm text-gray-500">
+              <p>Howdy! PaidIn was proudly built in the Lone Star State 🇺🇸</p>
+              <p>Dedicated to those who choose freedom, fairness, and truth over trust.</p>
+            </div>
+          </div>
         </div>
+        </div>
+      </footer>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 PaidIn. All rights reserved. Built with 🧡 for the Bitcoin economy.</p>
-          <p className="text-xs text-gray-500 mt-2 opacity-60">
-            Fidel Fúnez C. — Sovereign Builder, Independent Dev, and Relentless Bitcoiner.
-          </p>
-          <p className="text-xs text-gray-500 mt-2 opacity-60">
-            PaidIn was built between Roatán, Honduras 🇭🇳 and The Woodlands, Texas 🇺🇸.
-          </p>
-          <p className="text-xs text-gray-500 mt-1 opacity-60">
-            Dedicated to the people of Honduras, to the builders rising from unlikely places, and to a freer world. ₿
-          </p>
+      {/* Artistic Brand Accent Section */}
+      <section 
+        className="relative w-full overflow-hidden bg-[#0f161f]"
+        aria-hidden="true"
+        style={{ paddingBottom: 0, marginBottom: 0 }}
+      >
+        {/* Subtle Animated Background Orbs */}
+        <div className="relative" style={{ paddingBottom: 0, marginBottom: 0, minHeight: 'auto', height: 'auto' }}>
+          <motion.div
+            animate={{
+              x: [0, 100, 0],
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-bitcoin/10 rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, -80, 0],
+              y: [0, -60, 0],
+              scale: [1, 1.3, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5
+            }}
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-400/8 rounded-full blur-3xl"
+          />
+
+          {/* Large Brand Text - Elegant Watermark */}
+          <div className="relative flex items-end justify-center pt-8 lg:pt-12 pointer-events-none select-none" style={{ paddingBottom: 0, marginBottom: 0, height: 'auto' }}>
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-200px" }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+              className="text-[180px] lg:text-[280px] xl:text-[380px] 2xl:text-[480px] font-black uppercase tracking-tighter select-none"
+              style={{ 
+                fontFamily: 'Poppins, sans-serif',
+                lineHeight: 0.9,
+                letterSpacing: '-0.04em',
+                background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03))',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                paddingBottom: 0,
+                marginBottom: '-0.1em',
+                paddingTop: 0,
+                marginTop: 0,
+                display: 'block',
+                verticalAlign: 'bottom',
+              }}
+            >
+              PAIDIN
+            </motion.span>
+          </div>
         </div>
-      </div>
-    </footer>
+      </section>
+    </div>
   );
 }

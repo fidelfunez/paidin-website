@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Features from "@/pages/Features";
@@ -30,6 +31,7 @@ function Router() {
         <Route component={NotFound} />
       </Switch>
       <Footer />
+      <BackToTop />
     </>
   );
 }

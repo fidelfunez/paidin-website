@@ -1,179 +1,609 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Bitcoin,
-  TrendingUp,
-  Clock,
-  Shield,
-  FileText,
-  ArrowLeftRight,
-  Users,
+import { motion } from "framer-motion";
+import { 
+  Bitcoin, 
+  TrendingUp, 
+  Shield, 
+  Zap, 
+  Globe, 
   BarChart3,
-  Globe,
-  Zap,
-  Star,
+  ArrowRight,
+  Calculator,
+  Receipt,
+  Grid3x3,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const features = [
+const quotes = [
   {
-    icon: Bitcoin,
-    title: "Complete Bitcoin Operations",
-    description: "Run your entire business in Bitcoin - from payroll to expenses, everything in the world's soundest money.",
-    color: "from-orange-500 to-amber-500",
-    gradient: "bg-gradient-to-br from-orange-50 to-amber-50",
+    text: "If you don't believe me or don't get it, I don't have time to try to convince you, sorry.",
+    author: "Satoshi Nakamoto"
   },
   {
-    icon: TrendingUp,
-    title: "Real-Time Bitcoin Rates",
-    description: "Live BTC/USD conversion with transparent pricing and market insights for all business operations.",
-    color: "from-green-500 to-emerald-500",
-    gradient: "bg-gradient-to-br from-green-50 to-emerald-50",
+    text: "Running Bitcoin is the most fun you can have with your computer.",
+    author: "Hal Finney"
   },
   {
-    icon: Clock,
-    title: "Automated Business Processes",
-    description: "Set up recurring operations and never worry about timing again - everything runs on Bitcoin time.",
-    color: "from-blue-500 to-cyan-500",
-    gradient: "bg-gradient-to-br from-blue-50 to-cyan-50",
+    text: "Bitcoin is the first monetary network that is completely digital, completely global, and completely decentralized.",
+    author: "Michael Saylor"
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Multi-signature wallets and bank-grade security protocols protect your entire Bitcoin business.",
-    color: "from-purple-500 to-violet-500",
-    gradient: "bg-gradient-to-br from-purple-50 to-violet-50",
-  },
-  {
-    icon: FileText,
-    title: "Bitcoin Compliance",
-    description: "Automated reporting and compliance with regulations worldwide for Bitcoin business operations.",
-    color: "from-red-500 to-pink-500",
-    gradient: "bg-gradient-to-br from-red-50 to-pink-50",
-  },
-  {
-    icon: ArrowLeftRight,
-    title: "Multi-Currency Support",
-    description: "Support for Bitcoin, Lightning Network, and seamless conversions for global business operations.",
-    color: "from-indigo-500 to-blue-500",
-    gradient: "bg-gradient-to-br from-indigo-50 to-blue-50",
-  },
-  {
-    icon: Users,
-    title: "Team Management",
-    description: "Onboard employees and manage their Bitcoin wallets for complete business operations.",
-    color: "from-teal-500 to-cyan-500",
-    gradient: "bg-gradient-to-br from-teal-50 to-cyan-50",
-  },
-  {
-    icon: BarChart3,
-    title: "Business Analytics",
-    description: "Comprehensive dashboards with exportable reports and insights for Bitcoin operations.",
-    color: "from-yellow-500 to-orange-500",
-    gradient: "bg-gradient-to-br from-yellow-50 to-orange-50",
-  },
-  {
-    icon: Globe,
-    title: "Global Operations",
-    description: "Multi-timezone support for distributed teams running businesses entirely in Bitcoin.",
-    color: "from-slate-500 to-gray-500",
-    gradient: "bg-gradient-to-br from-slate-50 to-gray-50",
-  },
+    text: "Bitcoin is not just a currency, it's a new form of money that is native to the internet.",
+    author: "Andreas Antonopoulos"
+  }
 ];
 
 export default function Features() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-orange-50/20 to-white"></div>
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-bitcoin rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-orange-300 rounded-full blur-3xl"></div>
-      </div>
+    <section className="relative overflow-hidden bg-black text-white min-h-screen flex items-center">
+      {/* Bitcoin Quotes Ticker - Separator between Hero and Features */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="absolute top-0 left-0 right-0 bg-bitcoin overflow-hidden z-20"
+      >
+        <div className="relative z-20 h-10 flex items-center overflow-hidden">
+          <div className="flex items-center space-x-10 animate-scroll">
+            {/* Render quotes twice for seamless loop */}
+            {[...quotes, ...quotes].map((quote, index) => (
+              <div key={index} className="flex items-center space-x-2.5 whitespace-nowrap">
+                <img 
+                  src="/app - graphic designs/Bitcoin - logo - yellow.png" 
+                  alt="Bitcoin" 
+                  className="h-4 w-4 flex-shrink-0"
+                />
+                <span 
+                  className="text-white/90 text-sm font-semibold"
+                  style={{
+                    textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
+                  }}
+                >
+                  "{quote.text}" — {quote.author}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-bitcoin/20 shadow-lg mb-6">
-            <Star className="h-4 w-4 text-bitcoin mr-2" />
-            <span className="text-sm font-medium text-gray-700">Complete Bitcoin Business Operations</span>
+      {/* Animated Gradient Mesh Background - More Subtle */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-bitcoin/20 rounded-full blur-[120px]"
+        />
+        {/* Orange spot - Top, above first feature */}
+        <motion.div
+          animate={{
+            x: [0, 80, 0],
+            y: [0, -40, 0],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-0 right-1/3 w-[700px] h-[700px] bg-orange-500/15 rounded-full blur-[100px]"
+        />
+        {/* Orange spot - Between Accounting screenshot and content (Feature 2) */}
+        <motion.div
+          animate={{
+            x: [0, 70, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-[30%] left-1/3 w-[600px] h-[600px] bg-orange-500/15 rounded-full blur-[105px]"
+        />
+        {/* Orange spot - Between second and third features */}
+        <motion.div
+          animate={{
+            x: [0, -60, 0],
+            y: [0, 70, 0],
+            scale: [1, 1.25, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-1/2 left-1/4 w-[650px] h-[650px] bg-orange-500/15 rounded-full blur-[110px]"
+        />
+        <motion.div
+          animate={{
+            x: [0, -80, 0],
+            y: [0, -60, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-orange-500/15 rounded-full blur-[100px]"
+        />
+      </div>
+
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `linear-gradient(rgba(247, 147, 26, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(247, 147, 26, 0.3) 1px, transparent 1px)`,
+        backgroundSize: '80px 80px'
+      }}></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-40 w-full pt-56">
+        
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16 lg:mb-20"
+        >
+          <div className="inline-flex items-center gap-3 mb-8">
+            <div className="h-px w-12 bg-bitcoin/30"></div>
+            <Grid3x3 className="h-5 w-5 text-bitcoin" />
+            <span className="text-white text-sm font-bold tracking-[0.2em] uppercase">Everything You Need</span>
+            <div className="h-px w-12 bg-bitcoin/30"></div>
           </div>
           
-          <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Everything you need to run your{" "}
-            <span className="relative">
-              <span className="text-bitcoin">business in Bitcoin</span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-bitcoin to-orange-400 rounded-full opacity-60"></div>
+          <h2 className="text-6xl lg:text-8xl xl:text-9xl font-black text-white mb-8 leading-[0.9] tracking-tight max-w-6xl mx-auto">
+            <span className="block text-white/70">The Business Ops</span>
+            <span className="block text-5xl lg:text-6xl xl:text-7xl text-bitcoin font-light mt-2">
+              platform for Bitcoin
             </span>
           </h2>
-          <p className="text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            From payroll to expenses, compliance to analytics, PaidIn provides all the tools modern companies need to operate entirely in Bitcoin.
-          </p>
-        </div>
+        </motion.div>
 
-        {/* Feature Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {features.map((feature, index) => (
-            <div key={feature.title} className="group">
-              <div className="relative h-full">
-                {/* Glow Effect */}
-                <div className={`absolute -inset-0.5 bg-gradient-to-r ${feature.color} rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                
-                {/* Card */}
-                <Card className="relative h-full glass-card hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 border-0">
-                  <CardContent className="p-8">
-                    {/* Icon */}
-                    <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl ${feature.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <feature.icon className="h-8 w-8 text-bitcoin" />
+        {/* Dashboard Screenshot - Overview */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-32 lg:mb-40"
+        >
+          <div className="relative max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900">
+            <div className="relative w-full aspect-[16/10] overflow-hidden">
+              <img
+                src="/website-photos/hero-image.png"
+                alt="PaidIn Dashboard - Complete Business Operations Platform"
+                className="w-full h-full object-cover"
+                style={{ 
+                  transform: 'scale(1.25) translateX(1%) translateY(-2%)',
+                  transformOrigin: 'center center',
+                  objectPosition: '50% center'
+                }}
+              />
+            </div>
+            
+            {/* Subtle Glow Effect */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-bitcoin/20 to-orange-500/20 rounded-3xl blur-2xl -z-10 opacity-50"></div>
+          </div>
+        </motion.div>
+
+        {/* Feature 1: Payroll - Content Left, Image Right */}
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-[1fr,1.3fr] gap-12 lg:gap-20 items-center mb-32"
+        >
+          {/* Left: Content */}
+          <div className="relative pl-0 lg:pl-0">
+            <div className="relative z-10 pl-0">
+              {/* Elegant Badge with Connector */}
+              <div className="inline-flex items-center gap-3 mb-6 relative z-10">
+                <span className="text-6xl lg:text-8xl font-black text-orange-400/15 leading-none">01</span>
+                <div className="h-px w-16 bg-orange-400/30"></div>
+                <span className="text-bitcoin text-sm font-bold tracking-[0.2em] uppercase">Payroll</span>
+          </div>
+          
+              <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-tight relative z-10">
+                Pay your team
+                <br />
+                <span className="text-bitcoin">in Bitcoin</span>
+            <br />
+                <span className="text-5xl lg:text-6xl text-white/60">instantly, globally</span>
+          </h2>
+          
+              <p className="text-xl lg:text-2xl text-white/70 max-w-2xl leading-relaxed mb-12 font-light relative z-10">
+                Automated, instant, secure. Set up recurring payments and never worry about delays again.
+              </p>
+
+              {/* Features List - Bullet Points */}
+              <div className="space-y-3 relative z-10">
+                {[
+                  "Instant global payments",
+                  "Multi-sig security",
+                  "Auto tax withholding",
+                  "Automated recurring payments"
+                ].map((feature, index) => (
+          <motion.div
+                    key={feature}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    className="flex items-center gap-4 text-lg text-white/70"
+                  >
+                    <div className="w-1.5 h-1.5 bg-bitcoin rounded-full"></div>
+                    <span>{feature}</span>
+                  </motion.div>
+                ))}
+                        </div>
                     </div>
-                    
-                    {/* Content */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-bitcoin transition-colors">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                  </div>
+                  
+          {/* Right: Screenshot Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, x: 60, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            className="relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-bitcoin/10 to-orange-500/10 backdrop-blur-sm shadow-2xl">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="/website-photos/features-payroll.png"
+                  alt="Payroll Dashboard"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
+          </motion.div>
 
-        {/* CTA Section */}
-        <div className="relative">
-          <div className="glass-card rounded-3xl p-12 text-center">
-            <div className="max-w-3xl mx-auto">
-              <div className="flex items-center justify-center mb-6">
-                <Zap className="h-8 w-8 text-bitcoin mr-3" />
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900">
-                  Ready to run your business in Bitcoin?
-                </h3>
+        {/* Feature 2: Accounting - Image Left, Content Right */}
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-[1.3fr,1fr] gap-12 lg:gap-20 items-center mb-32"
+        >
+          {/* Left: Screenshot Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, x: -60, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            className="relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-orange-400/10 to-orange-500/10 backdrop-blur-sm shadow-2xl">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="/website-photos/features-accounting.png"
+                  alt="Accounting Dashboard"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <p className="text-xl text-gray-600 mb-8">
-                Join companies already operating entirely in Bitcoin
+            </div>
+          </motion.div>
+
+          {/* Right: Content */}
+          <div className="relative pr-0 lg:pr-0 text-right">
+            <div className="relative z-10 pr-0">
+              {/* Elegant Badge with Connector - Right aligned */}
+              <div className="inline-flex items-center gap-3 mb-6 relative z-10 lg:justify-start justify-end">
+                <span className="text-orange-400 text-sm font-bold tracking-[0.2em] uppercase">Accounting</span>
+                <div className="h-px w-16 bg-orange-400/30"></div>
+                <span className="text-6xl lg:text-8xl font-black text-orange-400/15 leading-none">02</span>
+              </div>
+              
+              <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-tight relative z-10">
+                Complete
+                <br />
+                <span className="text-orange-400">financial</span>
+                <br />
+                <span className="text-5xl lg:text-6xl text-white/60">accounting</span>
+              </h2>
+              
+              <p className="text-xl lg:text-2xl text-white/70 max-w-2xl ml-auto leading-relaxed mb-12 font-light relative z-10">
+                Enterprise-grade accounting infrastructure built for Bitcoin. Track, reconcile, and manage your financial operations with precision.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="btn-primary text-white font-semibold px-8 py-4 text-lg h-auto"
-                  onClick={() => window.open('https://paidin-app.netlify.app/auth', '_blank')}
-                >
-                  Start Free Trial
-                  <Zap className="ml-2 h-5 w-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-bitcoin text-bitcoin hover:bg-bitcoin hover:text-white font-semibold px-8 py-4 text-lg h-auto"
-                >
-                  Schedule Demo
-                </Button>
+
+              {/* Features List - Bullet Points */}
+              <div className="space-y-3 relative z-10 text-right">
+                {[
+                  "Real-time transaction tracking",
+                  "Automatic categorization",
+                  "Complete financial reconciliation",
+                  "Export to accounting software"
+                ].map((feature, index) => (
+                  <motion.div
+                    key={feature}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    className="flex items-center gap-4 text-lg text-white/70 justify-end"
+                  >
+                    <span>{feature}</span>
+                    <div className="w-1.5 h-1.5 bg-orange-400 rounded-full"></div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
+        </motion.div>
+
+        {/* Feature 3: Compliance - Content Left, Image Right */}
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="grid lg:grid-cols-[1fr,1.3fr] gap-12 lg:gap-20 items-center mb-32"
+        >
+          {/* Left: Content */}
+          <div className="relative pl-0 lg:pl-0">
+            <div className="relative z-10 pl-0">
+              {/* Elegant Badge with Connector */}
+              <div className="inline-flex items-center gap-3 mb-6 relative z-10">
+                <span className="text-6xl lg:text-8xl font-black text-orange-400/15 leading-none">03</span>
+                <div className="h-px w-16 bg-orange-400/30"></div>
+                <span className="text-bitcoin text-sm font-bold tracking-[0.2em] uppercase">Compliance</span>
+              </div>
+              
+              <h2 className="text-6xl lg:text-8xl font-black leading-[0.9] mb-8 tracking-tight relative z-10">
+                Automated
+                <br />
+                <span className="text-bitcoin">compliance</span>
+                <br />
+                <span className="text-5xl lg:text-6xl text-white/60">US & Canada</span>
+              </h2>
+              
+              <p className="text-xl lg:text-2xl text-white/70 max-w-2xl leading-relaxed mb-12 font-light relative z-10">
+                Regulatory compliance and reporting for US and Canadian operations. Automated, accurate, always up-to-date.
+              </p>
+
+              {/* Features List - Bullet Points */}
+              <div className="space-y-3 relative z-10">
+                {[
+                  "Automated tax reporting",
+                  "Audit-ready records",
+                  "Regulatory compliance",
+                  "Multi-jurisdiction support"
+                ].map((feature, index) => (
+                  <motion.div
+                    key={feature}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    className="flex items-center gap-4 text-lg text-white/70"
+                  >
+                    <div className="w-1.5 h-1.5 bg-bitcoin rounded-full"></div>
+                    <span>{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Screenshot Placeholder */}
+          <motion.div
+            initial={{ opacity: 0, x: 60, scale: 0.95 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            className="relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-bitcoin/10 to-orange-600/10 backdrop-blur-sm shadow-2xl">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="/website-photos/features-compliance.png"
+                  alt="Compliance Dashboard"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
+          </motion.div>
+
+        {/* Feature 4 & 5: Side by Side with Images */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-32">
+          {/* Feature 4: Tax Calculation & Reporting */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            className="relative"
+          >
+            {/* Image Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="relative mb-8 rounded-xl overflow-hidden border border-white/10 bg-gradient-to-br from-orange-300/10 to-orange-400/10 backdrop-blur-sm shadow-xl"
+            >
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src="/website-photos/features-taxes.png"
+                  alt="Tax Dashboard"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
+            <div className="pt-4">
+              {/* Elegant Badge with Connector */}
+              <div className="inline-flex items-center gap-3 mb-4">
+                <span className="text-4xl lg:text-5xl font-black text-orange-300/15 leading-none">04</span>
+                <div className="h-px w-12 bg-orange-300/30"></div>
+                <span className="text-orange-300 text-xs font-bold tracking-[0.2em] uppercase">Tax & Reporting</span>
+                </div>
+                
+              <h3 className="text-4xl lg:text-5xl font-black leading-[0.95] mb-6 tracking-tight">
+                Automated tax
+                <br />
+                <span className="text-orange-300">calculation</span>
+                </h3>
+              
+              <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
+                Precise tax calculations and comprehensive reporting. Generate compliance-ready documents with one click.
+              </p>
+
+              {/* Features List - Bullet Points */}
+              <div className="space-y-2">
+                {[
+                  "Precise tax calculations",
+                  "Compliance-ready documents",
+                  "Comprehensive reporting"
+                ].map((feature, index) => (
+                  <motion.div
+                    key={feature}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    className="flex items-center gap-3 text-base text-white/70"
+                  >
+                    <div className="w-1.5 h-1.5 bg-orange-300 rounded-full"></div>
+                    <span>{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Feature 5: Invoicing */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+            className="relative"
+          >
+            {/* Image Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative mb-8 rounded-xl overflow-hidden border border-white/10 bg-gradient-to-br from-orange-500/10 to-orange-600/10 backdrop-blur-sm shadow-xl"
+            >
+              <div className="aspect-[16/10] overflow-hidden">
+                <img
+                  src="/website-photos/features-invoicing.png"
+                  alt="Invoicing Dashboard"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
+            <div className="pt-4">
+              {/* Elegant Badge with Connector */}
+              <div className="inline-flex items-center gap-3 mb-4">
+                <span className="text-4xl lg:text-5xl font-black text-orange-500/15 leading-none">05</span>
+                <div className="h-px w-12 bg-orange-500/30"></div>
+                <span className="text-orange-500 text-xs font-bold tracking-[0.2em] uppercase">Invoicing</span>
+                  </div>
+                  
+              <h3 className="text-4xl lg:text-5xl font-black leading-[0.95] mb-6 tracking-tight">
+                Professional
+                <br />
+                <span className="text-orange-500">invoices</span>
+                    </h3>
+              
+              <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
+                Create, send, and track Bitcoin invoices. Streamlined billing in Bitcoin with automated follow-ups.
+              </p>
+
+              {/* Features List - Bullet Points */}
+              <div className="space-y-2">
+                {[
+                  "Create & send invoices",
+                  "Track payment status",
+                  "Automated follow-ups"
+                ].map((feature, index) => (
+                  <motion.div
+                    key={feature}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    className="flex items-center gap-3 text-base text-white/70"
+                  >
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                    <span>{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
+
+        {/* Bottom CTA - High-End */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-32 lg:mt-40 text-center"
+        >
+          <motion.div
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block"
+          >
+            <Button
+              size="lg"
+              className="relative bg-gradient-to-r from-orange-700 via-orange-600 to-orange-700 bg-size-200 bg-pos-0 hover:bg-pos-100 text-white font-black px-12 py-5 text-lg lg:text-xl h-auto shadow-[0_20px_60px_rgba(247,147,26,0.4)] hover:shadow-[0_25px_80px_rgba(247,147,26,0.5)] transition-all duration-500 rounded-full group overflow-hidden border border-white/20"
+              style={{
+                backgroundSize: '200% 100%',
+                backgroundColor: '#c2410c', // Darker orange for better shine visibility
+              }}
+              onClick={() => window.location.href = 'https://app.paidin.io'}
+            >
+              {/* Animated gradient overlay */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                animate={{
+                  x: ['-100%', '100%'],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 1,
+                  ease: 'easeInOut',
+                }}
+              />
+              
+              {/* Button content */}
+              <span className="relative z-10 flex items-center gap-3">
+              Start Building on Bitcoin
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              </span>
+              
+              {/* Glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-bitcoin to-orange-500 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300 -z-10"></div>
+            </Button>
+          </motion.div>
+        </motion.div>
+
       </div>
+      
     </section>
   );
 }

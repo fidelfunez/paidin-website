@@ -1,9 +1,9 @@
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
-import Testimonials from "@/components/Testimonials";
-import DemoVideoSection from "@/components/DemoVideoSection";
-import BitcoinEcosystemSection from "@/components/BitcoinEcosystemSection";
-import BitcoinPartnersSection from "@/components/BitcoinPartnersSection";
+import AccessibilitySection from "@/components/AccessibilitySection";
+import SocialProof from "@/components/SocialProof";
+import SecuritySection from "@/components/SecuritySection";
+import FinalCTA from "@/components/FinalCTA";
 
 function UnderConstruction() {
   return (
@@ -78,13 +78,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <UnderConstruction />
-      {/* Temporarily hidden - will be revealed after launch */}
-      {/* <Features />
-      <DemoVideoSection />
-      <BitcoinEcosystemSection />
-      <Testimonials />
-      <BitcoinPartnersSection /> */}
+      <Features />
+      <AccessibilitySection />
+      <SecuritySection />
+      {/* <SocialProof /> */}
+      <FinalCTA />
     </>
   );
 }

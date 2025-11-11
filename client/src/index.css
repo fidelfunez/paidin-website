@@ -72,19 +72,25 @@
 }
 
 @layer utilities {
-  /* Modern glass morphism effects */
+  /* Modern glass morphism effects - Safari compatible */
   .glass-card {
     background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .glass-card-dark {
     background: rgba(0, 0, 0, 0.05);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(247, 147, 26, 0.1);
     box-shadow: 0 8px 32px rgba(247, 147, 26, 0.05);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   /* Enhanced gradients */
@@ -175,23 +181,43 @@
     color: hsl(24, 94%, 48%);
   }
 
-  /* Floating animation utilities */
+  /* Floating animation utilities - Safari compatible */
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { 
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+    50% { 
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
   }
 
   @keyframes float-reverse {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(10px); }
+    0%, 100% { 
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+    50% { 
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px);
+    }
   }
 
   .animate-float {
+    -webkit-animation: float 6s ease-in-out infinite;
     animation: float 6s ease-in-out infinite;
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .animate-float-reverse {
+    -webkit-animation: float-reverse 4s ease-in-out infinite;
     animation: float-reverse 4s ease-in-out infinite;
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   /* Pulse glow effect */
@@ -225,16 +251,119 @@
     animation: shine 3s ease-in-out infinite;
   }
 
-  /* Cross-browser hero section consistency */
+  /* Cross-browser hero section consistency - Safari fixes */
   section {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
-  /* Ensure min-h-screen works consistently */
+  /* Ensure min-h-screen works consistently - Safari fix */
   html, body {
     height: 100%;
     -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Safari-specific fixes for layout consistency */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Hardware acceleration for better performance */
+  [class*="motion-"], [class*="animate-"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+  
+  /* Safari-specific backdrop-blur fixes */
+  .backdrop-blur-sm {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+  
+  .backdrop-blur-lg {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+  
+  /* Safari transform fixes */
+  .transform {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Fix for Safari will-change performance */
+  .will-change-transform {
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* Safari-specific fixes for Framer Motion performance */
+  [data-framer-name] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Safari-specific min-height fixes */
+  @supports (-webkit-appearance: none) {
+    .min-h-screen {
+      min-height: -webkit-fill-available;
+      min-height: 100vh;
+    }
+    
+    .h-screen {
+      height: -webkit-fill-available;
+      height: 100vh;
+    }
+  }
+  
+  /* Fix for Safari overflow issues */
+  @supports (-webkit-appearance: none) {
+    .overflow-hidden {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+  }
+  
+  /* Safari blur fallback for better performance */
+  @supports not (backdrop-filter: blur(10px)) {
+    .backdrop-blur-sm,
+    .backdrop-blur-md,
+    .backdrop-blur-lg,
+    .backdrop-blur-xl {
+      background: rgba(255, 255, 255, 0.9);
+    }
+  }
+  
+  /* Reduce motion for Safari performance */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
          /* SVG rendering consistency across browsers */
@@ -247,17 +376,23 @@
            -webkit-transform: translateZ(0);
          }
 
-         /* Bitcoin ticker scroll animation */
+         /* Bitcoin ticker scroll animation - Safari compatible */
          @keyframes scroll {
            0% {
+             -webkit-transform: translateX(0);
              transform: translateX(0);
            }
            100% {
+             -webkit-transform: translateX(-80%);
              transform: translateX(-80%);
            }
          }
 
          .animate-scroll {
+           -webkit-animation: scroll 45s linear infinite;
            animation: scroll 45s linear infinite;
+           will-change: transform;
+           -webkit-transform: translateZ(0);
+           transform: translateZ(0);
          }
 }

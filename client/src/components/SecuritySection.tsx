@@ -101,7 +101,7 @@ const securityFeatures = [
       "Biometric + hardware approvals",
       "Policies auto-sweep to cold storage",
     ],
-    image: "/website-photos/defensive-system-multi-sig.png",
+    image: "/website-photos/defensive-system-multi-sig.webp",
   },
   {
     icon: Shield,
@@ -111,7 +111,7 @@ const securityFeatures = [
       "Immutable ledger signing via HSMs",
       "Tokenised PII vaults",
     ],
-    image: "/website-photos/defensive-system-end-2-encrypted.png",
+    image: "/website-photos/defensive-system-end-2-encrypted.webp",
   },
   {
     icon: Eye,
@@ -121,7 +121,7 @@ const securityFeatures = [
       "Anomaly-trained watchtowers",
       "Quarterly external red teams",
     ],
-    image: "/website-photos/defensive-system-24-monitoring.png",
+    image: "/website-photos/defensive-system-24-monitoring.webp",
   },
   {
     icon: Server,
@@ -131,7 +131,7 @@ const securityFeatures = [
       "Air-gapped partner vault attestations",
       "Tiered policies synced with insured custodians",
     ],
-    image: "/website-photos/defensive-system-cold-storage.png",
+    image: "/website-photos/defensive-system-cold-storage.webp",
   },
 ];
 
@@ -198,28 +198,27 @@ const certifications = [
 ];
 
 export default function SecuritySection() {
-  // Defensive Systems carousel state - commented out while section is hidden
-  // const [currentFeatureIndex, setCurrentFeatureIndex] = useState(0);
-  // const [isPaused, setIsPaused] = useState(false);
+  const [currentFeatureIndex, setCurrentFeatureIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-rotate carousel (pauses on hover) - commented out while section is hidden
-  // useEffect(() => {
-  //   if (isPaused) return;
-  //   
-  //   const interval = setInterval(() => {
-  //     setCurrentFeatureIndex((prev) => (prev + 1) % securityFeatures.length);
-  //   }, 5000); // Change slide every 5 seconds
+  // Auto-rotate carousel (pauses on hover)
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      setCurrentFeatureIndex((prev) => (prev + 1) % securityFeatures.length);
+    }, 5000); // Change slide every 5 seconds
 
-  //   return () => clearInterval(interval);
-  // }, [isPaused]);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
-  // const nextFeature = () => {
-  //   setCurrentFeatureIndex((prev) => (prev + 1) % securityFeatures.length);
-  // };
+  const nextFeature = () => {
+    setCurrentFeatureIndex((prev) => (prev + 1) % securityFeatures.length);
+  };
 
-  // const prevFeature = () => {
-  //   setCurrentFeatureIndex((prev) => (prev - 1 + securityFeatures.length) % securityFeatures.length);
-  // };
+  const prevFeature = () => {
+    setCurrentFeatureIndex((prev) => (prev - 1 + securityFeatures.length) % securityFeatures.length);
+  };
 
   return (
     <section className="relative overflow-hidden bg-[#050a14] min-h-screen">
@@ -304,7 +303,7 @@ export default function SecuritySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-120px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-3 mb-6 px-6 py-2 rounded-full border border-white/15 bg-white/5 text-white/60 text-xs uppercase tracking-[0.35em] mt-10"
+            className="inline-flex items-center gap-3 mb-6 px-6 py-2 rounded-full border border-white/15 bg-white/5 text-white/60 text-xs uppercase tracking-[0.35em] mt-2"
           >
             <Shield className="h-4 w-4 text-bitcoin" />
             Security Blueprint
@@ -425,7 +424,7 @@ export default function SecuritySection() {
                           </div>
                           <p className="text-sm text-white leading-relaxed">
                             {item.description}
-                          </p>
+                    </p>
                           <div className="flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.32em] text-white/60">
                             <span className="h-px w-10 bg-gradient-to-r from-bitcoin via-orange-500/35 to-transparent" />
                             {item.stat}
@@ -489,20 +488,141 @@ export default function SecuritySection() {
             </motion.div>
         </div>
 
-        {/* Defensive Systems - Metal Sheet Design - HIDDEN */}
-        {false && (
-        <div className="relative mb-28">
+        {/* Defensive Systems - Side by Side Layout */}
+        <div className="relative mb-28 lg:mb-40">
+          <div className="grid lg:grid-cols-[1.15fr,0.85fr] gap-3 lg:gap-4 max-w-7xl mx-auto items-center">
+            {/* Left: Defensive Systems Card */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-130px" }}
-            transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-            className="relative mx-auto max-w-7xl overflow-hidden rounded-[44px] border border-blue-300/20 shadow-2xl"
+              viewport={{ once: true, margin: "-130px" }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+              className="relative overflow-hidden rounded-[44px] border border-blue-300/20 shadow-2xl"
+              style={{
+                background: `
+                  linear-gradient(135deg, 
+                    rgba(50, 60, 75, 0.98) 0%,
+                    rgba(45, 55, 70, 0.95) 25%,
+                    rgba(40, 50, 65, 0.98) 50%,
+                    rgba(45, 55, 70, 0.95) 75%,
+                    rgba(50, 60, 75, 0.98) 100%
+                  ),
+                  repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 1px,
+                    rgba(150, 180, 220, 0.03) 1px,
+                    rgba(150, 180, 220, 0.03) 2px
+                  )
+                `,
+                boxShadow: `
+                  0 25px 80px rgba(0, 0, 0, 0.6),
+                  inset 0 2px 4px rgba(150, 180, 220, 0.12),
+                  inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+                  0 0 0 1px rgba(150, 180, 220, 0.15)
+                `,
+              }}
           >
-            {/* Defensive Systems content - hidden */}
+              {/* Metal rim/shine effect */}
+              <div 
+                className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-300/30 to-transparent"
+              />
+              <div 
+                className="absolute top-0 left-0 bottom-0 w-px bg-gradient-to-b from-blue-300/25 via-transparent to-transparent"
+              />
+              <div 
+                className="absolute top-0 right-0 bottom-0 w-px bg-gradient-to-b from-blue-300/25 via-transparent to-transparent"
+              />
+
+              {/* Subtle metallic grain texture */}
+              <div 
+                className="absolute inset-0 pointer-events-none opacity-[0.12]"
+                style={{
+                  backgroundImage: `
+                    repeating-linear-gradient(
+                      0deg,
+                      rgba(150, 180, 220, 0.04) 0px,
+                      transparent 1px,
+                      transparent 2px,
+                      rgba(150, 180, 220, 0.04) 3px
+                    )
+                  `,
+                }}
+              />
+
+              {/* Content Container */}
+              <div className="relative px-6 py-4 sm:px-8 sm:py-5 lg:px-8 lg:py-5 flex flex-col">
+                {/* Header Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <span className="inline-flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.45em] text-white/60 mb-3">
+                    <Shield className="h-4 w-4 text-bitcoin" />
+                    Defensive Systems
+                      </span>
+                  <h3 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight mb-1">
+                    Enterprise security
+                  </h3>
+                  <h3 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-bitcoin leading-tight mb-3">
+                    Built for Bitcoin.
+                    </h3>
+                  <p className="text-white/70 text-base sm:text-lg leading-relaxed">
+                    Each system focuses on a specific attack surface—approvals, data, monitoring, custody. Together they build an always-on fortress that never hands custody to PaidIn.
+                  </p>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Right: Feature Images Carousel */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-130px" }}
+              transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
+              className="relative flex flex-col items-center justify-center overflow-visible -mt-4 lg:-mt-6"
+            >
+              {/* Carousel Container */}
+              <div className="relative overflow-visible w-full">
+                <AnimatePresence mode="wait">
+                  {securityFeatures.map((feature, index) => {
+                    if (index !== currentFeatureIndex) return null;
+                    return (
+                      <motion.div
+                        key={feature.title}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -50 }}
+                        transition={{ 
+                          duration: 0.5, 
+                          ease: "easeOut"
+                        }}
+                        className="flex flex-col items-center w-full"
+                      >
+                        {/* Photo */}
+                        <div className="relative w-full max-w-md lg:max-w-lg aspect-square overflow-visible flex items-center justify-center">
+                          <img
+                            src={feature.image}
+                            alt={feature.title}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        {/* Photo Title */}
+                        <div className="mt-1 text-center">
+                          <p className="text-white/80 text-sm sm:text-base font-medium">
+                            {feature.title}
+                          </p>
+                        </div>
+                </motion.div>
+              );
+            })}
+                </AnimatePresence>
+              </div>
           </motion.div>
+          </div>
         </div>
-        )}
 
         {/* Certifications - Keep as is */}
         <motion.div
@@ -512,20 +632,6 @@ export default function SecuritySection() {
           transition={{ duration: 0.8, delay: 1.8 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-bitcoin/30"></div>
-              <CheckCircle2 className="h-5 w-5 text-bitcoin" />
-              <h3 className="text-2xl lg:text-3xl font-black text-white">
-                Certified & Audited
-            </h3>
-              <div className="h-px w-12 bg-bitcoin/30"></div>
-            </div>
-            <p className="text-white/70 text-lg font-light">
-              Third-party audited and certified by the world's leading security organizations. No shortcuts.
-            </p>
-          </div>
-
           {/* Asymmetric Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {certifications.map((cert, index) => (
@@ -550,6 +656,9 @@ export default function SecuritySection() {
 
           {/* Additional Security Badges */}
           <div className="pt-12 border-t border-bitcoin/20">
+            <p className="text-center text-white/70 text-lg font-light mb-8">
+              Third-party audited and certified by the world's leading security organizations. No shortcuts.
+            </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-sm text-white/70">
               {[
                 { text: "Penetration Tested", icon: Fingerprint },

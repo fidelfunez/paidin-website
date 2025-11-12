@@ -1,27 +1,26 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const testimonials = [
   {
-    quote: "We went from spending weeks on Bitcoin payroll headaches to clicking 'Pay' and calling it a day. Game changer.",
-    author: "Sarah Chen",
-    role: "CEO",
-    company: "BitFlow Technologies",
+    quote: "From spending weeks on Bitcoin payroll headaches to clicking 'Pay'. Game changer.",
+    author: "Sheldon Kozushko",
+    role: "Founder",
+    company: "Spring Street Studios",
     rating: 5,
   },
   {
-    quote: "The compliance features alone saved us from hiring two accountants. Everything's automated and audit-ready.",
-    author: "Marcus Rodriguez",
+    quote: "The compliance features & tax automations alone saved us from hiring two accountants.",
+    author: "Monica Anderson",
     role: "CFO",
-    company: "Lightning Labs",
+    company: "Numa Health",
     rating: 5,
   },
   {
     quote: "Finally, a platform that doesn't make me feel like I need a computer science degree. It just works.",
-    author: "Elena Ivanova",
+    author: "Laura Baumann",
     role: "Head of Operations",
-    company: "Satoshi Ventures",
+    company: "Camden Living",
     rating: 5,
   },
 ];
@@ -41,7 +40,7 @@ export default function SocialProof() {
   return (
     <section className="relative overflow-hidden bg-white min-h-screen flex items-center">
       {/* Top Transition Gradient - Midnight Blue to White */}
-      <div className="absolute top-0 left-0 right-0 h-56 lg:h-64 bg-gradient-to-b from-[#050a14] via-[#050a14]/80 via-[#050a14]/40 via-gray-900/20 via-gray-100/30 to-white pointer-events-none z-10"></div>
+      <div className="absolute top-0 left-0 right-0 h-56 lg:h-64 bg-gradient-to-b from-[#050a14] via-[#050a14]/80 via-[#050a14]/40 via-gray-900/20 via-gray-100/30 to-white pointer-events-none z-0"></div>
       
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -71,77 +70,138 @@ export default function SocialProof() {
         />
       </div>
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-56 pb-40 w-full">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 pt-72 lg:pt-80 pb-48 w-full z-10">
         
-        {/* Header - Compact */}
+        {/* Editorial Title - Magazine Style */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 mt-8"
+          className="mb-16 lg:mb-24 relative z-10"
         >
-          <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight tracking-tight">
-            What our{" "}
-            <span className="text-bitcoin">early users</span> are saying
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px w-12 bg-gray-300"></div>
+            <span className="text-xs text-gray-400 font-light tracking-[0.4em] uppercase">
+              Testimonials
+            </span>
+            <div className="h-px flex-1 max-w-24 bg-gray-300"></div>
+          </div>
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.95] tracking-tight max-w-4xl">
+            Our{" "}
+            <span className="text-bitcoin">early users</span> are saying 💬
           </h2>
         </motion.div>
 
-        {/* Compact Carousel */}
-        <div className="relative">
-          <div className="relative h-[500px] overflow-hidden">
-            {/* Animated Quote Content */}
-            <div className="max-w-4xl mx-auto flex items-center justify-center px-8 h-full">
+        {/* Editorial Quote Section - Magazine Layout */}
+        <div className="relative h-[700px] lg:h-[750px]">
+          {/* Large Testimonial Number - Background Accent */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="absolute left-0 lg:left-8 top-20 lg:top-24 z-0 pointer-events-none"
+          >
+            <span className="text-[10rem] sm:text-[12rem] lg:text-[16rem] xl:text-[18rem] font-black leading-none tracking-tight" style={{ color: 'rgba(17, 24, 39, 0.04)' }}>
+              {String(currentTestimonial + 1).padStart(2, "0")}
+            </span>
+          </motion.div>
+
+          {/* Main Editorial Layout - Asymmetric Grid */}
+          <div className="grid lg:grid-cols-[1.3fr,0.7fr] gap-12 lg:gap-20 xl:gap-28 items-center pt-8 lg:pt-16 relative z-10">
+            
+            {/* Left: Large Editorial Quote */}
+            <div className="relative h-full flex items-center">
               <AnimatePresence mode="wait">
                 {testimonials.map((testimonial, index) => (
                   index === currentTestimonial && (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, x: index === currentTestimonial ? 0 : index < currentTestimonial ? -100 : 100 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: index < currentTestimonial ? 100 : -100 }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex-1 text-center"
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -40 }}
+                      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                      className="space-y-6 lg:space-y-8 w-full"
                     >
-                      {/* Large Quote Icon */}
+                      {/* Decorative Opening Quote Mark - Editorial Style */}
                       <motion.div
-                        initial={{ scale: 0, rotate: -180 }}
-                        animate={{ scale: 1, rotate: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="mb-8"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-[6rem] sm:text-[7rem] lg:text-[9rem] xl:text-[10rem] font-serif text-gray-900/8 leading-none -mb-6 -ml-2 lg:-ml-4"
+                        style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
                       >
-                        <Quote className="h-20 w-20 text-bitcoin/20 mx-auto" />
+                        "
                       </motion.div>
-
-                      {/* Quote Text - Large Typography */}
+                      
+                      {/* Quote Text - Large Editorial Serif */}
                       <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="text-3xl lg:text-5xl font-light text-gray-900 leading-relaxed mb-12 italic"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 leading-[1.15] tracking-[-0.02em] pl-4 lg:pl-8"
+                        style={{ 
+                          fontFamily: 'Georgia, "Times New Roman", serif',
+                          fontWeight: 300
+                        }}
                       >
-                        "{testimonial.quote}"
+                        {testimonial.quote}
                       </motion.p>
+                    </motion.div>
+                  )
+                ))}
+              </AnimatePresence>
+            </div>
 
-                      {/* Author - Minimal */}
+            {/* Right: Author Attribution - Minimal & Elegant */}
+            <div className="flex flex-col justify-center">
+              <AnimatePresence mode="wait">
+                {testimonials.map((testimonial, index) => (
+                  index === currentTestimonial && (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -30 }}
+                      transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      className="space-y-6"
+                    >
+                      {/* Elegant Divider Line */}
                       <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        className="h-px w-20 bg-gray-900 origin-left"
+                      />
+                      
+                      {/* Author Name - Bold, Editorial */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                        className="flex items-center justify-center gap-6"
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        className="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 tracking-tight leading-tight"
                       >
-                        <div className="text-left">
-                          <div className="font-bold text-gray-900 text-lg">{testimonial.author}</div>
-                          <div className="text-gray-500 text-sm">
-                            {testimonial.role}, {testimonial.company}
-                          </div>
-                        </div>
-                        {/* Stars */}
-                        <div className="flex gap-1">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 text-bitcoin fill-bitcoin" />
-                          ))}
-                        </div>
+                        {testimonial.author}
+                      </motion.div>
+                      
+                      {/* Role - Uppercase, Light, Spaced */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.7 }}
+                        className="text-xs lg:text-sm text-gray-500 font-light tracking-[0.2em] uppercase"
+                      >
+                        {testimonial.role}
+                      </motion.div>
+                      
+                      {/* Company - Light, Smaller */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }}
+                        className="text-sm lg:text-base text-gray-400 font-light"
+                      >
+                        {testimonial.company}
                       </motion.div>
                     </motion.div>
                   )
@@ -149,22 +209,36 @@ export default function SocialProof() {
               </AnimatePresence>
             </div>
           </div>
-        </div>
 
-        {/* Dots Indicator */}
-        <div className="flex items-center justify-center gap-2 mt-8">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentTestimonial(index)}
-              className={`transition-all duration-300 ${
-                index === currentTestimonial
-                  ? "w-8 h-1.5 bg-bitcoin rounded-full"
-                  : "w-1.5 h-1.5 bg-gray-300 rounded-full hover:bg-bitcoin/50"
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
+          {/* Editorial Navigation - Minimal, Sophisticated */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="flex items-center justify-between mt-20 lg:mt-32 pt-8 border-t border-gray-200"
+          >
+            {/* Minimal Dots Navigation */}
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`h-1 transition-all duration-500 ease-out ${
+                    index === currentTestimonial
+                      ? "w-16 bg-gray-900"
+                      : "w-1 bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            {/* Editorial Page Counter */}
+            <div className="text-xs text-gray-400 font-light tracking-[0.3em] uppercase">
+              {String(currentTestimonial + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
+            </div>
+          </motion.div>
         </div>
 
         {/* Logo Cloud - Minimal */}
@@ -178,22 +252,41 @@ export default function SocialProof() {
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px w-16 bg-gray-300"></div>
             <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">
-              Trusted by Bitcoin-forward companies
+              Powered by industry leaders
             </p>
             <div className="h-px w-16 bg-gray-300"></div>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-30">
-            {["🏢 Company A", "🏢 Company B", "🏢 Company C", "🏢 Company D", "🏢 Company E"].map((company, index) => (
+          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+            {[
+              { name: "Breez", logo: "/website-photos/partner-breez-logo.webp", maxWidth: "130px" },
+              { name: "Plaid", logo: "/website-photos/partner-plaid-logo.webp", maxWidth: "130px" },
+              { name: "Stripe", logo: "/website-photos/partner-stripe-logo.webp", maxWidth: "80px" },
+              { name: "Strike", logo: "/website-photos/partner-strike-logo.webp", isWhite: true },
+              { name: "Netlify", logo: "/website-photos/partner-netlify-logo.webp" },
+            ].map((partner, index) => (
               <motion.div
-                key={company}
+                key={partner.name}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.1, opacity: 0.5 }}
-                className="text-xl font-bold text-gray-400"
+                whileHover={{ 
+                  y: -8,
+                  scale: 1.05,
+                  transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+                }}
+                className="h-10 sm:h-12 lg:h-14 w-auto opacity-70 hover:opacity-100 transition-all duration-300 cursor-pointer group"
+                style={{ maxWidth: partner.maxWidth || "120px" }}
               >
-                {company}
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className={`h-full w-full object-contain transition-all duration-300 ${
+                    partner.isWhite 
+                      ? "filter brightness-0 group-hover:brightness-100 group-hover:drop-shadow-lg" 
+                      : "group-hover:drop-shadow-lg group-hover:brightness-110"
+                  }`}
+                />
               </motion.div>
             ))}
           </div>

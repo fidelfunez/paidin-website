@@ -178,7 +178,7 @@ export default function Hero() {
                 <source src="/videos/paidin-demo.mp4" type="video/mp4" />
                 {/* Fallback image if video doesn't load */}
                 <img
-                  src="/website-photos/hero-image.png"
+                  src="/website-photos/hero-image.webp"
                   alt="PaidIn Dashboard - Bitcoin Business Operations"
                   className="w-full h-full object-cover"
                 />

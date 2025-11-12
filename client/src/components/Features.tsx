@@ -49,7 +49,7 @@ export default function Features() {
             {[...quotes, ...quotes].map((quote, index) => (
               <div key={index} className="flex items-center space-x-2.5 whitespace-nowrap">
                 <img 
-                  src="/app - graphic designs/Bitcoin - logo - yellow.png" 
+                  src="/app - graphic designs/Bitcoin - logo - yellow.webp" 
                   alt="Bitcoin" 
                   className="h-4 w-4 flex-shrink-0"
                 />
@@ -181,7 +181,7 @@ export default function Features() {
           <div className="relative max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900">
             <div className="relative w-full aspect-[16/10] overflow-hidden">
               <img
-                src="/website-photos/hero-image.png"
+                src="/website-photos/hero-image.webp"
                 alt="PaidIn Dashboard - Complete Business Operations Platform"
                 className="w-full h-full object-cover"
                 style={{ 
@@ -262,7 +262,7 @@ export default function Features() {
             <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-bitcoin/10 to-orange-500/10 backdrop-blur-sm shadow-2xl">
               <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="/website-photos/features-payroll.png"
+                  src="/website-photos/features-payroll.webp"
                   alt="Payroll Dashboard"
                   className="w-full h-full object-cover"
                 />
@@ -290,7 +290,7 @@ export default function Features() {
             <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-orange-400/10 to-orange-500/10 backdrop-blur-sm shadow-2xl">
               <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="/website-photos/features-accounting.png"
+                  src="/website-photos/features-accounting.webp"
                   alt="Accounting Dashboard"
                   className="w-full h-full object-cover"
                 />
@@ -351,7 +351,7 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="grid lg:grid-cols-[1fr,1.3fr] gap-12 lg:gap-20 items-center mb-32"
+          className="grid lg:grid-cols-[1fr,1.4fr] gap-12 lg:gap-20 items-center mb-32"
         >
           {/* Left: Content */}
           <div className="relative pl-0 lg:pl-0">
@@ -410,7 +410,7 @@ export default function Features() {
             <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-bitcoin/10 to-orange-600/10 backdrop-blur-sm shadow-2xl">
               <div className="aspect-[4/3] overflow-hidden">
                 <img
-                  src="/website-photos/features-compliance.png"
+                  src="/website-photos/features-compliance.webp"
                   alt="Compliance Dashboard"
                   className="w-full h-full object-cover"
                 />
@@ -437,9 +437,9 @@ export default function Features() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative mb-8 rounded-xl overflow-hidden border border-white/10 bg-gradient-to-br from-orange-300/10 to-orange-400/10 backdrop-blur-sm shadow-xl"
             >
-              <div className="aspect-[16/10] overflow-hidden">
+              <div className="aspect-[13/10] overflow-hidden">
                 <img
-                  src="/website-photos/features-taxes.png"
+                  src="/website-photos/features-taxes.webp"
                   alt="Tax Dashboard"
                   className="w-full h-full object-cover"
                 />
@@ -503,9 +503,9 @@ export default function Features() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="relative mb-8 rounded-xl overflow-hidden border border-white/10 bg-gradient-to-br from-orange-500/10 to-orange-600/10 backdrop-blur-sm shadow-xl"
             >
-              <div className="aspect-[16/10] overflow-hidden">
+              <div className="aspect-[13/10] overflow-hidden">
                 <img
-                  src="/website-photos/features-invoicing.png"
+                  src="/website-photos/features-invoicing.webp"
                   alt="Invoicing Dashboard"
                   className="w-full h-full object-cover"
                 />

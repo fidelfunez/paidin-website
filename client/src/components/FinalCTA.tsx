@@ -11,7 +11,7 @@ export default function FinalCTA() {
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.img
-          src="/website-photos/bitcoin-graffiti.png"
+          src="/website-photos/bitcoin-graffiti.webp"
           alt="Bitcoin graffiti backdrop"
           initial={{ filter: "blur(0px)", opacity: 0.95, scale: 0.92 }}
           whileInView={{ filter: "blur(18px)", opacity: 0.35, scale: 0.98 }}

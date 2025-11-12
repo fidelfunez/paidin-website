@@ -81,7 +81,7 @@ export default function Home() {
       <Features />
       <AccessibilitySection />
       <SecuritySection />
-      {/* <SocialProof /> */}
+      <SocialProof />
       <FinalCTA />
     </>
   );

@@ -38,7 +38,7 @@ export default function BtcQuotesSeparator() {
           {[...quotes, ...quotes].map((quote, index) => (
             <div key={index} className="flex items-center space-x-2.5 whitespace-nowrap">
               <img 
-                src="/app - graphic designs/Bitcoin - logo - yellow.png" 
+                src="/app - graphic designs/Bitcoin - logo - yellow.webp" 
                 alt="Bitcoin" 
                 className="h-4 w-4 flex-shrink-0"
               />

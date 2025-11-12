@@ -8,37 +8,37 @@ const features = [
     title: "Zero PhD Required",
     description: "Seriously. You don't need to know what a blockchain is. Just click buttons and pay people. We handle the wizardry behind the curtain.",
     icon: Brain,
-    image: "/website-photos/carousel-feature-zero-phd-required.png",
+    image: "/website-photos/carousel-feature-zero-phd-required.webp",
   },
   {
     title: "A Familiar Interface",
     description: "If you can use Slack or Excel, you can use PaidIn. No weird Bitcoin jargon, no confusing steps. Just familiar, clean design.",
     icon: Layout,
-    image: "/website-photos/carousel-feature-familiar-design.png",
+    image: "/website-photos/carousel-feature-familiar-design.webp",
   },
   {
     title: "Help Always Available",
     description: "Stuck? We've got your back. Our team actually answers your questions and won't leave you hanging with technical mumbo-jumbo.",
     icon: Headphones,
-    image: "/website-photos/carousel-feature-support-team.png",
+    image: "/website-photos/carousel-feature-support-team.webp",
   },
   {
     title: "Pay in USD or Bitcoin",
     description: "You think in dollars, we handle the Bitcoin conversion. Your employees get paid in Bitcoin, or vice versa. Everyone's happy. It's that simple.",
     icon: DollarSign,
-    image: "/website-photos/carousel-feature-pay-usd-bitcoin.png",
+    image: "/website-photos/carousel-feature-pay-usd-bitcoin.webp",
   },
   {
     title: "Easy Wallet Setup",
     description: "You hold the keys — We create wallets, manage channels, do all the scary stuff. Your team just opens their account and sees their Bitcoin payment.",
     icon: Wallet,
-    image: "/website-photos/carousel-feature-easy-wallet-setup.png",
+    image: "/website-photos/carousel-feature-easy-wallet-setup.webp",
   },
   {
     title: "Set it and forget it",
     description: "Taxes? Automated. Compliance? Automated. Reports? Automated. You focus on running your business, we handle the boring paperwork.",
     icon: Settings,
-    image: "/website-photos/carousel-feature-set-forget.png",
+    image: "/website-photos/carousel-feature-set-forget.webp",
   },
 ];
 
@@ -338,7 +338,7 @@ export default function AccessibilitySection() {
       
       {/* Accessibility Section Background Image */}
       <motion.img
-        src="/website-photos/accessibility-section-background.png"
+        src="/website-photos/accessibility-section-background.webp"
         alt="Global accessibility map"
         className="absolute top-6 lg:top-12 left-0 right-0 mx-auto w-[90%] lg:w-[82%] max-w-6xl h-auto object-contain opacity-75 pointer-events-none z-0"
         initial={{ scale: 0.92 }}

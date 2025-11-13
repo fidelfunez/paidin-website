@@ -181,7 +181,7 @@ export default function Features() {
           <div className="relative max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900">
             <div className="relative w-full aspect-[16/10] overflow-hidden">
               <img
-                src="/website-photos/hero-image.webp"
+                src="/website-photos/features-banner-image.webp"
                 alt="PaidIn Dashboard - Complete Business Operations Platform"
                 className="w-full h-full object-cover"
                 style={{ 

@@ -165,33 +165,13 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-6 relative"
           >
-            {/* Video Container - 16:9 Aspect Ratio */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200/50 aspect-video bg-gray-900">
-              <video
+            {/* Image Container - Taller Aspect Ratio */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200/50 aspect-[16/15] bg-gray-900">
+              <img
+                src="/website-photos/hero-image.webp"
+                alt="PaidIn Dashboard - Bitcoin Business Operations"
                 className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster="/website-photos/hero-video-poster.jpg"
-              >
-                <source src="/videos/paidin-demo.mp4" type="video/mp4" />
-                {/* Fallback image if video doesn't load */}
-                <img
-                  src="/website-photos/hero-image.webp"
-                  alt="PaidIn Dashboard - Bitcoin Business Operations"
-                  className="w-full h-full object-cover"
-                />
-              </video>
-              
-              {/* Play Button Overlay (optional - shows when paused) */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/10 transition-colors cursor-pointer group">
-                <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-xl">
-                  <svg className="w-6 h-6 text-bitcoin ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
+              />
             </div>
             
             {/* Enhanced Glow Effect - Animated */}

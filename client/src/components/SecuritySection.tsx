@@ -61,7 +61,7 @@ function HashToText({ text, className, delay = 0, highlightText, highlightClass 
             clearInterval(interval);
           }
         }
-      }, 70); // Animation speed
+      }, 45); // Animation speed (faster)
 
       return () => clearInterval(interval);
     }, delay * 1000);
@@ -225,40 +225,77 @@ export default function SecuritySection() {
       {/* Top Transition Gradient */}
       <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-[#050a14] via-[#050a14] to-transparent pointer-events-none z-10"></div>
       
-      {/* Background Elements */}
+      {/* Background Elements - Realistic Blueprint Style */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Paper-like base with slight texture */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0f1a] via-[#0a0f1a] to-[#050a14]" />
+        <div 
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `repeating-linear-gradient(
+              0deg,
+              transparent,
+              transparent 2px,
+              rgba(255, 255, 255, 0.1) 2px,
+              rgba(255, 255, 255, 0.1) 4px
+            )`,
+          }}
+        />
+        
+        {/* Main blueprint grid - fine lines (cyan blueprint color) */}
+        <div
+          className="absolute inset-0 opacity-[0.4]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(0, 191, 255, 0.25) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 191, 255, 0.25) 1px, transparent 1px)
+            `,
+            backgroundSize: "40px 40px",
+          }}
+        />
+        
+        {/* Secondary grid - medium lines for major divisions */}
         <div
           className="absolute inset-0 opacity-[0.3]"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(70,130,255,0.15) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(70,130,255,0.15) 1px, transparent 1px)
+              linear-gradient(rgba(0, 191, 255, 0.35) 1.5px, transparent 1.5px),
+              linear-gradient(90deg, rgba(0, 191, 255, 0.35) 1.5px, transparent 1.5px)
             `,
-            backgroundSize: "120px 120px",
-            mixBlendMode: "screen",
+            backgroundSize: "200px 200px",
           }}
         />
+        
+        {/* Diagonal lines for depth and dimension */}
         <div
-          className="absolute inset-0 opacity-[0.18]"
+          className="absolute inset-0 opacity-[0.2]"
           style={{
             backgroundImage: `
-              linear-gradient(135deg, rgba(120,170,255,0.18) 1px, transparent 1px)
+              linear-gradient(45deg, rgba(0, 191, 255, 0.2) 1px, transparent 1px),
+              linear-gradient(-45deg, rgba(0, 191, 255, 0.2) 1px, transparent 1px)
             `,
-            backgroundSize: "160px 160px",
-            mixBlendMode: "screen",
+            backgroundSize: "80px 80px",
           }}
         />
+        
+        {/* Measurement dots at intersections */}
         <div
-          className="absolute inset-0 opacity-[0.14]"
+          className="absolute inset-0 opacity-[0.5]"
           style={{
-            backgroundImage: `
-              radial-gradient(circle at 15% 25%, rgba(120,170,255,0.32) 0, transparent 45%),
-              radial-gradient(circle at 80% 30%, rgba(247,147,26,0.25) 0, transparent 50%),
-              radial-gradient(circle at 50% 80%, rgba(70,130,255,0.22) 0, transparent 55%)
-            `,
+            backgroundImage: `radial-gradient(circle, rgba(0, 191, 255, 0.4) 1px, transparent 1px)`,
+            backgroundSize: "200px 200px",
+            backgroundPosition: "0 0, 100px 100px",
           }}
         />
-        <div className="absolute inset-0 opacity-[0.25] bg-[radial-gradient(circle_at_center,rgba(44,120,255,0.32),transparent_70%)] mix-blend-screen"></div>
+        
+        {/* Subtle paper texture overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E")`,
+            backgroundSize: "200px 200px",
+          }}
+        />
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
@@ -629,7 +666,7 @@ export default function SecuritySection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 1.8 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="max-w-5xl mx-auto"
         >
           {/* Asymmetric Grid */}
@@ -641,7 +678,7 @@ export default function SecuritySection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ 
-                  default: { duration: 0.5, delay: index * 0.1 },
+                  default: { duration: 0.4, delay: 0.4 + index * 0.05 },
                   hover: { duration: 0.15, ease: "easeOut" }
                 }}
                 whileHover={{ scale: 1.05, y: -5 }}

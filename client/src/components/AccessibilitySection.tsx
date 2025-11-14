@@ -227,7 +227,7 @@ function CarouselFeatures() {
   return (
     <div className="relative">
       {/* Carousel Container */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-50 to-orange-100/50 border border-orange-200/50 shadow-2xl">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-300 via-orange-500 to-orange-700 border border-orange-400/60 shadow-2xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -235,7 +235,7 @@ function CarouselFeatures() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="grid lg:grid-cols-[1fr,1.2fr] gap-8 lg:gap-12 p-8 lg:p-12"
+            className="grid lg:grid-cols-[1fr,1.2fr] gap-8 lg:gap-12 p-8 lg:p-12 items-center"
           >
             {/* Left: Image */}
             <div className="relative order-2 lg:order-1">
@@ -261,13 +261,13 @@ function CarouselFeatures() {
             </div>
 
             {/* Right: Content */}
-            <div className="flex flex-col justify-center order-1 lg:order-2">
+            <div className="flex flex-col justify-center order-1 lg:order-2 h-full">
               {/* Title at Top */}
               <motion.h4
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight"
+                className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight"
               >
                 {currentFeature.title}
               </motion.h4>
@@ -277,7 +277,7 @@ function CarouselFeatures() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl lg:text-2xl text-gray-600 leading-relaxed font-light mb-8"
+                className="text-xl lg:text-2xl text-white leading-relaxed font-light mb-8"
               >
                 {currentFeature.description}
               </motion.p>

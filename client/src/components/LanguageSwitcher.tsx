@@ -6,7 +6,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Globe } from "lucide-react";
 
 type Language = {
   code: string;
@@ -30,13 +29,28 @@ export default function LanguageSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="text-gray-600 hover:text-bitcoin">
-          <Globe className="h-4 w-4 mr-2" />
-          <span className="mr-1">{currentLang.flag}</span>
-          <span className="hidden sm:inline">{currentLang.code.toUpperCase()}</span>
-        </Button>
-      </DropdownMenuTrigger>
+      <div className="flex items-center gap-2">
+        <DropdownMenuTrigger asChild>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="relative w-8 h-8 p-0 rounded-full border border-gray-200 hover:border-bitcoin/40 hover:bg-orange-50/50 transition-all duration-200 overflow-hidden bg-white"
+          >
+            {/* Flag image covering the circle */}
+            {currentLang.code === 'en' && (
+              <img
+                src="/website-photos/header-language-button-image.svg"
+                alt="US Flag"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+          </Button>
+        </DropdownMenuTrigger>
+        {/* Language code outside the circle */}
+        <span className="text-xs font-semibold text-gray-700">
+          {currentLang.code.toUpperCase()}
+        </span>
+      </div>
       <DropdownMenuContent align="end">
         {languages.map((language) => (
           <DropdownMenuItem

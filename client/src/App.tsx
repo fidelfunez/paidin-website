@@ -8,12 +8,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import Home from "@/pages/Home";
-import About from "@/pages/About";
-import Features from "@/pages/Features";
-import Pricing from "@/pages/Pricing";
-import Security from "@/pages/Security";
-import Contact from "@/pages/Contact";
-import Careers from "@/pages/Careers";
+import ComingSoon from "@/components/ComingSoon";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,12 +17,24 @@ function Router() {
       <Navigation />
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/features" component={Features} />
-        <Route path="/pricing" component={Pricing} />
-        <Route path="/security" component={Security} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/careers" component={Careers} />
+        <Route path="/about">
+          <ComingSoon pageName="About" />
+        </Route>
+        <Route path="/features">
+          <ComingSoon pageName="Features" />
+        </Route>
+        <Route path="/pricing">
+          <ComingSoon pageName="Pricing" />
+        </Route>
+        <Route path="/security">
+          <ComingSoon pageName="Security" />
+        </Route>
+        <Route path="/contact">
+          <ComingSoon pageName="Contact" />
+        </Route>
+        <Route path="/careers">
+          <ComingSoon pageName="Careers" />
+        </Route>
         <Route component={NotFound} />
       </Switch>
       <Footer />

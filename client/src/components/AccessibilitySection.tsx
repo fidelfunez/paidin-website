@@ -235,7 +235,7 @@ function CarouselFeatures() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="grid lg:grid-cols-[1fr,1.2fr] gap-8 lg:gap-12 p-8 lg:p-12 items-center"
+            className="grid lg:grid-cols-[1fr,1.2fr] gap-6 sm:gap-8 lg:gap-12 p-6 sm:p-8 lg:p-12 items-center"
           >
             {/* Left: Image */}
             <div className="relative order-2 lg:order-1">
@@ -267,7 +267,7 @@ function CarouselFeatures() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight"
+                className="text-2xl sm:text-3xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight"
               >
                 {currentFeature.title}
               </motion.h4>
@@ -277,7 +277,7 @@ function CarouselFeatures() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl lg:text-2xl text-white leading-relaxed font-light mb-8"
+                className="text-base sm:text-lg lg:text-2xl text-white leading-relaxed font-light mb-6 sm:mb-8"
               >
                 {currentFeature.description}
               </motion.p>
@@ -287,15 +287,15 @@ function CarouselFeatures() {
       </div>
 
       {/* Navigation Controls - Outside Card */}
-      <div className="flex items-center justify-between mt-8">
+      <div className="flex items-center justify-between mt-6 sm:mt-8">
         {/* Previous Button */}
         <button
           onClick={prevFeature}
-          className="flex items-center gap-2 text-gray-600 hover:text-bitcoin transition-colors duration-200 group"
+          className="flex items-center gap-2 text-gray-600 hover:text-bitcoin transition-colors duration-200 group min-h-[44px] min-w-[44px] px-2"
           aria-label="Previous feature"
         >
           <ChevronLeft className="h-5 w-5 group-hover:translate-x-[-2px] transition-transform" />
-          <span className="text-sm font-medium">Previous</span>
+          <span className="text-sm font-medium hidden sm:inline">Previous</span>
         </button>
 
         {/* Dots Indicator */}
@@ -304,7 +304,7 @@ function CarouselFeatures() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`transition-all duration-300 ${
+              className={`transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center ${
                 index === currentIndex
                   ? "w-8 h-1.5 bg-bitcoin rounded-full"
                   : "w-1.5 h-1.5 bg-gray-300 rounded-full hover:bg-bitcoin/50"
@@ -317,10 +317,10 @@ function CarouselFeatures() {
         {/* Next Button */}
         <button
           onClick={nextFeature}
-          className="flex items-center gap-2 text-gray-600 hover:text-bitcoin transition-colors duration-200 group"
+          className="flex items-center gap-2 text-gray-600 hover:text-bitcoin transition-colors duration-200 group min-h-[44px] min-w-[44px] px-2"
           aria-label="Next feature"
         >
-          <span className="text-sm font-medium">Next</span>
+          <span className="text-sm font-medium hidden sm:inline">Next</span>
           <ChevronRight className="h-5 w-5 group-hover:translate-x-[2px] transition-transform" />
         </button>
       </div>
@@ -344,6 +344,7 @@ export default function AccessibilitySection() {
         initial={{ scale: 0.92 }}
         animate={{ scale: [0.92, 0.95, 0.92] }}
         transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        loading="lazy"
       />
       
       {/* Background Elements */}

@@ -153,13 +153,13 @@ export default function Navigation() {
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="hover:bg-orange-50/50"
+                className="hover:bg-orange-50/50 min-w-[44px] min-h-[44px]"
               >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white/95 backdrop-blur-xl">
-              <div className="flex flex-col space-y-6 mt-6">
+            <SheetContent side="right" className="w-[85vw] sm:w-[400px] bg-white/95 backdrop-blur-xl">
+              <div className="flex flex-col space-y-4 sm:space-y-6 mt-6">
                 {navItems.map((item) => {
                   const active = isActive(item.href);
                   return (
@@ -167,7 +167,7 @@ export default function Navigation() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className={`relative text-lg font-light tracking-wide transition-colors duration-200 ${
+                      className={`relative text-lg font-light tracking-wide transition-colors duration-200 py-3 min-h-[44px] flex items-center ${
                         active
                           ? "text-bitcoin"
                           : "text-gray-700 hover:text-bitcoin"
@@ -183,7 +183,7 @@ export default function Navigation() {
                 <div className="flex flex-col space-y-3 pt-6 border-t border-gray-200/50">
                   <Button 
                     variant="ghost" 
-                    className="text-gray-700 hover:text-bitcoin justify-start font-medium rounded-full"
+                    className="text-gray-700 hover:text-bitcoin justify-start font-medium rounded-full min-h-[44px] py-6"
                     onClick={() => {
                       window.location.href = 'https://app.paidin.io';
                       setIsOpen(false);
@@ -192,7 +192,7 @@ export default function Navigation() {
                     Login
                   </Button>
                   <Button 
-                    className="bg-gradient-to-r from-bitcoin to-orange-500 hover:from-orange-500 hover:to-bitcoin text-white justify-start font-semibold rounded-full shadow-lg"
+                    className="bg-gradient-to-r from-bitcoin to-orange-500 hover:from-orange-500 hover:to-bitcoin text-white justify-start font-semibold rounded-full shadow-lg min-h-[44px] py-6"
                     onClick={() => {
                       window.location.href = 'https://app.paidin.io';
                       setIsOpen(false);

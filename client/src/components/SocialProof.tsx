@@ -70,7 +70,7 @@ export default function SocialProof() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 pt-72 lg:pt-80 pb-48 w-full z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 pt-24 sm:pt-48 lg:pt-80 pb-24 sm:pb-48 w-full z-10">
         
         {/* Editorial Title - Magazine Style */}
         <motion.div
@@ -87,28 +87,28 @@ export default function SocialProof() {
             </span>
             <div className="h-px flex-1 max-w-24 bg-gray-300"></div>
           </div>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.95] tracking-tight max-w-4xl">
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.95] tracking-tight max-w-4xl">
             Our{" "}
             <span className="text-bitcoin">early users</span> are saying 💬
           </h2>
         </motion.div>
 
         {/* Editorial Quote Section - Magazine Layout */}
-        <div className="relative h-[700px] lg:h-[750px]">
+        <div className="relative min-h-[500px] sm:min-h-[600px] lg:h-[750px]">
           {/* Large Testimonial Number - Background Accent */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="absolute left-0 lg:left-8 top-20 lg:top-24 z-0 pointer-events-none"
+            className="absolute left-0 lg:left-8 top-10 sm:top-20 lg:top-24 z-0 pointer-events-none"
           >
-            <span className="text-[10rem] sm:text-[12rem] lg:text-[16rem] xl:text-[18rem] font-black leading-none tracking-tight" style={{ color: 'rgba(17, 24, 39, 0.04)' }}>
+            <span className="text-[6rem] sm:text-[8rem] lg:text-[16rem] xl:text-[18rem] font-black leading-none tracking-tight" style={{ color: 'rgba(17, 24, 39, 0.04)' }}>
               {String(currentTestimonial + 1).padStart(2, "0")}
             </span>
           </motion.div>
 
           {/* Main Editorial Layout - Asymmetric Grid */}
-          <div className="grid lg:grid-cols-[1.3fr,0.7fr] gap-12 lg:gap-20 xl:gap-28 items-center pt-8 lg:pt-16 relative z-10">
+          <div className="grid lg:grid-cols-[1.3fr,0.7fr] gap-6 sm:gap-12 lg:gap-20 xl:gap-28 items-start lg:items-center pt-8 lg:pt-16 relative z-10">
             
             {/* Left: Large Editorial Quote */}
             <div className="relative h-full flex items-center">
@@ -128,7 +128,7 @@ export default function SocialProof() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-[6rem] sm:text-[7rem] lg:text-[9rem] xl:text-[10rem] font-serif text-gray-900/8 leading-none -mb-6 -ml-2 lg:-ml-4"
+                        className="text-[4rem] sm:text-[5rem] lg:text-[9rem] xl:text-[10rem] font-serif text-gray-900/8 leading-none -mb-4 sm:-mb-6 -ml-2 lg:-ml-4"
                         style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
                       >
                         "
@@ -139,7 +139,7 @@ export default function SocialProof() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-gray-900 leading-[1.15] tracking-[-0.02em] pl-4 lg:pl-8"
+                        className="text-2xl sm:text-3xl lg:text-6xl xl:text-7xl font-light text-gray-900 leading-[1.15] tracking-[-0.02em] pl-2 sm:pl-4 lg:pl-8"
                         style={{ 
                           fontFamily: 'Georgia, "Times New Roman", serif',
                           fontWeight: 300
@@ -179,7 +179,7 @@ export default function SocialProof() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 tracking-tight leading-tight"
+                        className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 tracking-tight leading-tight"
                       >
                         {testimonial.author}
                       </motion.div>
@@ -189,7 +189,7 @@ export default function SocialProof() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.7 }}
-                        className="text-xs lg:text-sm text-gray-500 font-light tracking-[0.2em] uppercase"
+                        className="text-[10px] sm:text-xs lg:text-sm text-gray-500 font-light tracking-[0.2em] uppercase"
                       >
                         {testimonial.role}
                       </motion.div>
@@ -199,7 +199,7 @@ export default function SocialProof() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
-                        className="text-sm lg:text-base text-gray-400 font-light"
+                        className="text-xs sm:text-sm lg:text-base text-gray-400 font-light"
                       >
                         {testimonial.company}
                       </motion.div>
@@ -216,7 +216,7 @@ export default function SocialProof() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex items-center justify-between mt-20 lg:mt-32 pt-8 border-t border-gray-200"
+            className="flex items-center justify-between mt-12 sm:mt-20 lg:mt-32 pt-6 sm:pt-8 border-t border-gray-200"
           >
             {/* Minimal Dots Navigation */}
             <div className="flex items-center gap-2">
@@ -224,9 +224,9 @@ export default function SocialProof() {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`h-1 transition-all duration-500 ease-out ${
+                  className={`h-1.5 sm:h-1 transition-all duration-500 ease-out min-w-[44px] min-h-[44px] flex items-center justify-center ${
                     index === currentTestimonial
-                      ? "w-16 bg-gray-900"
+                      ? "w-12 sm:w-16 bg-gray-900"
                       : "w-1 bg-gray-300 hover:bg-gray-400"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -247,7 +247,7 @@ export default function SocialProof() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mt-20"
+          className="text-center mt-12 sm:mt-20"
         >
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px w-16 bg-gray-300"></div>
@@ -286,6 +286,7 @@ export default function SocialProof() {
                       ? "filter brightness-0 group-hover:brightness-100 group-hover:drop-shadow-lg" 
                       : "group-hover:drop-shadow-lg group-hover:brightness-110"
                   }`}
+                  loading="lazy"
                 />
               </motion.div>
             ))}

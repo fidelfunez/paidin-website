@@ -18,6 +18,7 @@ export default function FinalCTA() {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.8, duration: 1.8, ease: "easeInOut" }}
           className="absolute inset-x-0 top-12 bottom-0 w-full h-full object-contain pointer-events-none"
+          loading="lazy"
         />
         <motion.div
           initial={{ opacity: 0 }}
@@ -34,7 +35,7 @@ export default function FinalCTA() {
         backgroundSize: '60px 60px'
       }}></div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-48 pb-24 w-full">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-48 pb-16 sm:pb-24 w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +63,7 @@ export default function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-6xl lg:text-8xl xl:text-9xl font-black text-white mb-20 leading-[0.9] tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-8xl xl:text-9xl font-black text-white mb-12 sm:mb-20 leading-[0.9] tracking-tight"
           >
             Ready to run
             <br />
@@ -91,31 +92,33 @@ export default function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-14"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center mb-10 sm:mb-14 w-full"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto"
             >
               <Button
                 size="lg"
-                className="bg-white text-bitcoin hover:bg-gray-100 font-black px-10 py-7 text-lg h-auto shadow-2xl hover:shadow-white/30 transition-all duration-300 group rounded-full"
+                className="bg-white text-bitcoin hover:bg-gray-100 font-black px-6 sm:px-10 py-5 sm:py-7 text-base sm:text-lg h-auto min-h-[44px] shadow-2xl hover:shadow-white/30 transition-all duration-300 group rounded-full w-full sm:w-auto"
                 onClick={() => window.location.href = 'https://app.paidin.io'}
               >
                 Get Started Free
-                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto"
             >
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-2 border-white/60 text-white hover:bg-white hover:text-bitcoin font-black px-10 py-7 text-lg h-auto backdrop-blur-sm transition-all duration-300 rounded-full"
+                className="bg-transparent border-2 border-white/60 text-white hover:bg-white hover:text-bitcoin font-black px-6 sm:px-10 py-5 sm:py-7 text-base sm:text-lg h-auto min-h-[44px] backdrop-blur-sm transition-all duration-300 rounded-full w-full sm:w-auto"
               >
-                <Calendar className="mr-3 h-6 w-6" />
+                <Calendar className="mr-3 h-5 w-5 sm:h-6 sm:w-6" />
                 Schedule Demo
               </Button>
             </motion.div>

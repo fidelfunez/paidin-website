@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative pt-16 overflow-hidden h-screen flex items-center bg-white">
+    <section className="relative pt-16 overflow-hidden min-h-screen flex items-center bg-white py-12 lg:py-0">
       {/* Refined Background - More Subtle */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Base gradient - Enhanced with more orange left, purple right */}
@@ -77,8 +77,8 @@ export default function Hero() {
         }}></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center h-full">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12">
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left: Content - Reduced column span for larger screenshot */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -94,7 +94,7 @@ export default function Hero() {
             </div>
 
             {/* Massive Headline - Enhanced Typography */}
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-black leading-[0.9] tracking-tight">
               <span className="block mb-2 text-bitcoin">Bitcoin</span>
               <div className="relative inline-block min-h-[1.2em]">
                 <AnimatePresence mode="wait">
@@ -110,13 +110,13 @@ export default function Hero() {
                   </motion.span>
                 </AnimatePresence>
               </div>
-              <span className="block text-4xl lg:text-5xl xl:text-6xl text-gray-400 font-light mt-2">
+              <span className="block text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-gray-400 font-light mt-2">
                 for everyone
               </span>
             </h1>
 
             {/* Subheadline - Enhanced */}
-            <p className="text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed font-light max-w-xl">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed font-light max-w-xl">
               Run your business operations entirely on Bitcoin.{" "}
               <span className="text-gray-900 font-medium">No experience or technical knowledge required.</span>
             </p>
@@ -125,13 +125,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 items-start pt-2">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-bitcoin to-orange-500 hover:from-orange-500 hover:to-bitcoin text-white font-black px-10 py-6 text-lg h-auto shadow-2xl hover:shadow-bitcoin/40 hover:scale-105 transition-all duration-300 rounded-full"
+                className="bg-gradient-to-r from-bitcoin to-orange-500 hover:from-orange-500 hover:to-bitcoin text-white font-black px-6 sm:px-10 py-5 sm:py-6 text-base sm:text-lg h-auto min-h-[44px] shadow-2xl hover:shadow-bitcoin/40 hover:scale-105 transition-all duration-300 rounded-full w-full sm:w-auto"
                 onClick={() => window.location.href = 'https://app.paidin.io'}
               >
                 Get Started Free
                 <ArrowRight className="ml-3 h-5 w-5" />
               </Button>
-              <button className="text-base lg:text-lg text-gray-700 hover:text-bitcoin font-semibold transition-colors flex items-center gap-2 py-6 group">
+              <button className="text-sm sm:text-base lg:text-lg text-gray-700 hover:text-bitcoin font-semibold transition-colors flex items-center gap-2 py-4 sm:py-6 group min-h-[44px] w-full sm:w-auto justify-center sm:justify-start">
                 Watch Demo
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -149,9 +149,9 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="flex items-center gap-1.5 text-[11px] lg:text-xs text-gray-500 font-light whitespace-nowrap"
+                  className="flex items-center gap-1.5 text-xs sm:text-[11px] lg:text-xs text-gray-500 font-light"
                 >
-                  <CheckCircle2 className="h-3 w-3 lg:h-3.5 lg:w-3.5 text-bitcoin flex-shrink-0" />
+                  <CheckCircle2 className="h-3.5 w-3.5 lg:h-3.5 lg:w-3.5 text-bitcoin flex-shrink-0" />
                   <span>{item}</span>
                 </motion.div>
               ))}
@@ -171,6 +171,8 @@ export default function Hero() {
                 src="/website-photos/hero-image.webp"
                 alt="PaidIn Dashboard - Bitcoin Business Operations"
                 className="w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
             

@@ -43,18 +43,18 @@ export default function Features() {
         transition={{ duration: 0.6 }}
         className="absolute top-0 left-0 right-0 bg-bitcoin overflow-hidden z-20"
       >
-        <div className="relative z-20 h-10 flex items-center overflow-hidden">
-          <div className="flex items-center space-x-10 animate-scroll">
+        <div className="relative z-20 h-12 sm:h-10 flex items-center overflow-hidden">
+          <div className="flex items-center space-x-6 sm:space-x-10 animate-scroll">
             {/* Render quotes twice for seamless loop */}
             {[...quotes, ...quotes].map((quote, index) => (
-              <div key={index} className="flex items-center space-x-2.5 whitespace-nowrap">
+              <div key={index} className="flex items-center space-x-2 sm:space-x-2.5 whitespace-nowrap">
                 <img 
                   src="/app - graphic designs/Bitcoin - logo - yellow.webp" 
                   alt="Bitcoin" 
-                  className="h-4 w-4 flex-shrink-0"
+                  className="h-4 w-4 sm:h-4 sm:w-4 flex-shrink-0"
                 />
                 <span 
-                  className="text-white/90 text-sm font-semibold"
+                  className="text-white/90 text-xs sm:text-sm font-semibold"
                   style={{
                     textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)'
                   }}
@@ -189,6 +189,7 @@ export default function Features() {
                   transformOrigin: 'center center',
                   objectPosition: '50% center'
                 }}
+                loading="lazy"
               />
             </div>
             
@@ -265,6 +266,7 @@ export default function Features() {
                   src="/website-photos/features-payroll.webp"
                   alt="Payroll Dashboard"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -293,6 +295,7 @@ export default function Features() {
                   src="/website-photos/features-accounting.webp"
                   alt="Accounting Dashboard"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -413,6 +416,7 @@ export default function Features() {
                   src="/website-photos/features-compliance.webp"
                   alt="Compliance Dashboard"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -442,6 +446,7 @@ export default function Features() {
                   src="/website-photos/features-taxes.webp"
                   alt="Tax Dashboard"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </motion.div>
@@ -508,6 +513,7 @@ export default function Features() {
                   src="/website-photos/features-invoicing.webp"
                   alt="Invoicing Dashboard"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </motion.div>

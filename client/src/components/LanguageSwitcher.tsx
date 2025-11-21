@@ -34,7 +34,7 @@ export default function LanguageSwitcher() {
           <Button 
             variant="ghost" 
             size="sm" 
-            className="relative w-8 h-8 p-0 rounded-full border border-gray-200 hover:border-bitcoin/40 hover:bg-orange-50/50 transition-all duration-200 overflow-hidden bg-white"
+            className="relative w-10 h-10 sm:w-8 sm:h-8 p-0 rounded-full border border-gray-200 hover:border-bitcoin/40 hover:bg-orange-50/50 transition-all duration-200 overflow-hidden bg-white min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0"
           >
             {/* Flag image covering the circle */}
             {currentLang.code === 'en' && (
@@ -42,6 +42,13 @@ export default function LanguageSwitcher() {
                 src="/website-photos/header-language-button-image.svg"
                 alt="US Flag"
                 className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+            {currentLang.code === 'es' && (
+              <img
+                src="/website-photos/header-language-button-image-esp.jpg"
+                alt="Spain Flag"
+                className="absolute inset-0 w-full h-full object-cover scale-150"
               />
             )}
           </Button>

@@ -240,7 +240,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-200px" }}
               transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[180px] lg:text-[280px] xl:text-[380px] 2xl:text-[480px] font-black uppercase tracking-tighter select-none"
+              className="text-[80px] sm:text-[120px] lg:text-[280px] xl:text-[380px] 2xl:text-[480px] font-black uppercase tracking-tighter select-none"
               style={{ 
                 fontFamily: 'Poppins, sans-serif',
                 lineHeight: 0.9,
